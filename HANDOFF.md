@@ -13,7 +13,7 @@ must survive a session or blocks a gate belongs here.
 
 | Gate | When (Cairo) | State | Evidence |
 | --- | --- | --- | --- |
-| 0 | Sat 13:00 | **local green; commit/tag pending** | 7/7 fixtures valid, 67 tests pass, ruff clean |
+| 0 | Sat 13:00 | **passed** | Commit `2a7986d`, tag `gate-0`; 7/7 fixtures, 67 tests, ruff clean |
 | 1 | Sat 16:00 | not started | End-to-end on fixtures; simulator narrows the band |
 | 2 | Sat 19:00 | not started | Real POWER caches; real engine behind the API |
 | 3 | Sun 09:00 | not started | Feature freeze; Arabic review; first real QA report |
@@ -32,7 +32,7 @@ must survive a session or blocks a gate belongs here.
 - [x] `python -m pytest` green — `67 passed in 1.11s`
 - [x] `python -m ruff check .` green — `All checks passed!`
 - [x] `docs/AI_USE.md` bootstrap entry
-- [ ] `gate-0` tag and clean tree — **human commit required; not yet created**
+- [x] `gate-0` tag and clean tree — commit `2a7986d`, annotated tag `gate-0`
 
 ### Gate 0 command evidence
 
@@ -94,9 +94,9 @@ live.
 
 **Next**
 
-1. Finish L-01: tests, validate/test/lint, AI-use log, tag `gate-0`.
-2. L-02: API endpoints on fixtures, then real engine.
-3. L-03: web app and three lenses on fixtures.
+1. L-02: API endpoints on fixtures, then the real engine behind the same result schema.
+2. L-03: web app and three lenses on fixtures.
+3. L-04: content, Council and the Number Auditor.
 
 **Blockers**
 

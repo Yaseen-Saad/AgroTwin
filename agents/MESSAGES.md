@@ -90,3 +90,17 @@ Evidence:  `python -m contracts.validate --all` → 7/7; `python -m pytest` → 
            `python -m ruff check .` → all checks passed.
 Needed by: first B-01 checkpoint in 45 minutes
 
+---
+
+### MSG-0007 · Lead → Builder · 2026-11-14 · GATE-0 · STATUS
+
+Task:      B-01
+Status:    ASSIGNED
+Body:      Gate 0 passed and is tagged `gate-0` at commit `2a7986d`. The contracts are now
+           frozen for implementation; no schema edits will be made without a change request.
+           Lead is starting L-02 (API on fixtures) in parallel with your POWER ingest.
+Evidence:  `python -m contracts.validate --all` → 7/7; `python -m pytest` → 67 passed;
+           `python -m ruff check .` → all checks passed; `git tag -n` → gate-0.
+Needed by: no deadline
+
+

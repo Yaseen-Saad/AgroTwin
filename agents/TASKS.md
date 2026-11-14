@@ -8,16 +8,16 @@
 
 | Track | Active task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-01` Gate 0 spine and green build | `REVIEW` (green; commit/tag human-gated) | `L-02` API on fixtures |
+| Lead (L) | `L-02` API endpoints on fixtures | `IN_PROGRESS` | `L-03` web app |
 | Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
 
 ## Board
 
 | ID | Owner | Wave | Pri | Task | Depends on | Status |
 | --- | --- | --- | --- | --- | --- | --- |
-| L-01 | L | 0 | P0 | Gate 0 spine, version, tests, tags | — | `REVIEW` |
+| L-01 | L | 0 | P0 | Gate 0 spine, version, tests, tags | — | `DONE` |
 | B-01 | B | 0 | P0 | POWER ingest, 3 site caches, fallback | L-01 contracts | `ASSIGNED` |
-| L-02 | L | 1 | P0 | API endpoints on fixtures, then real engine | L-01, B-02 | `TODO` |
+| L-02 | L | 1 | P0 | API endpoints on fixtures, then real engine | L-01, B-02 | `IN_PROGRESS` |
 | L-03 | L | 1 | P0 | Web app: map, barcode, mixer, sliders, lenses | L-01, L-02 fixtures | `TODO` |
 | B-02 | B | 1 | P0 | FAO-56 water balance, replay, danger windows | L-01, B-01 | `TODO` |
 | B-03 | B | 2 | P0 | Economics, barcode class, ranking, prices | B-02 | `TODO` |
@@ -38,11 +38,11 @@ Legend: `TODO` · `ASSIGNED` · `IN_PROGRESS` · `BLOCKED` · `REVIEW` · `CHANG
 
 ### L-01 · Gate 0 spine and green build
 
-**Status:** `REVIEW` · **Wave:** 0 · **Priority:** P0
+**Status:** `DONE` · **Wave:** 0 · **Priority:** P0
 
 **Evidence.** `python -m contracts.validate --all` → 7/7 fixtures valid ·
-`python -m pytest` → 67 passed · `python -m ruff check .` → all checks passed. The `gate-0` tag
-and the first commit are human-gated and not yet created.
+`python -m pytest` → 67 passed · `python -m ruff check .` → all checks passed. Commit `2a7986d`,
+annotated tag `gate-0`.
 
 **Goal.** Finish the repository spine: `HANDOFF.md`, `docs/AI_USE.md`, assumptions ledger, tests
 for version/contracts/ET0/units/crops, green validate + test + lint, and the `gate-0` tag.
@@ -68,7 +68,7 @@ python -m contracts.validate --all; python -m pytest; python -m ruff check .
 
 ### L-02 · API endpoints on fixtures, then real engine
 
-**Status:** `TODO` · **Wave:** 1 · **Priority:** P0
+**Status:** `IN_PROGRESS` · **Wave:** 1 · **Priority:** P0
 
 **Goal.** FastAPI service with `/health`, `/demo/{site}`, `POST /diagnose`, `POST /simulate`,
 `POST /scout/run`, `POST /scout/calibrate`, `POST /fieldcard`. Serve fixtures first, then swap

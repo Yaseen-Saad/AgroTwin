@@ -1,6 +1,6 @@
 # Status Snapshot
 
-> Updated: 2026-11-14 · Gate: **0 (local green; human commit pending)** · Version: **0.1.0**
+> Updated: 2026-11-14 · Gate: **0 passed** · Version: **0.1.0**
 > Owner of this file: **Agent L**. The Builder reports through `MESSAGES.md`.
 
 ## One-line state
@@ -13,7 +13,7 @@ the spine and the API on fixtures.
 
 | Agent | Current task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-01` Gate 0 spine and green build | `REVIEW` (green; commit/tag human-gated) | `L-02` API on fixtures |
+| Lead (L) | `L-02` API endpoints on fixtures | `IN_PROGRESS` | `L-03` web app |
 | Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
 
 ## Gate checklist
@@ -31,7 +31,7 @@ the spine and the API on fixtures.
 | Ruff green | done — all checks passed |
 | `HANDOFF.md` Gate 0 checkpoint | done |
 | `docs/AI_USE.md` bootstrap entry | done |
-| `gate-0` tag | pending human commit |
+| `gate-0` tag | done — `2a7986d`, tag `gate-0` |
 
 ## Environment
 
