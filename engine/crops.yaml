@@ -1,0 +1,104 @@
+# AI-generated under human review (opencode/big-pickle, 2026-11-14). See docs/AI_USE.md.
+# Crop coefficients, stage lengths, rooting depths and yield response factors.
+# PROVISIONAL: Agent 2 must verify every row against FAO-56 Tables 11-12 and FAO-33 before
+# Gate 2, add the exact table/page, and obtain agronomist review of Egyptian planting windows.
+# Any value that cannot be verified must become an assumption:<id> in config/assumptions.yaml.
+version: "0.1.0"
+generated_by: "agent-0 / opencode/big-pickle / 2026-11-14"
+review_status: "provisional; agronomist review required"
+citations:
+  coefficients: "FAO-56 Tables 11-12 (Kc, rooting depth, depletion fraction)"
+  yield_response: "FAO Irrigation and Drainage Paper 33 (Ky)"
+  status: "provisional; verify exact row"
+
+crops:
+  wheat:
+    label: "Wheat"
+    family: cereal
+    season: winter
+    planting_window: {start: "10-15", end: "11-30"}
+    stages_days: {initial: 25, development: 60, mid: 45, late: 30}
+    kc: {initial: 0.40, mid: 1.15, late: 0.30}
+    root_depth_m: 1.5
+    depletion_fraction: 0.55
+    ky: 1.00
+    n_credit_kg_ha: {low: 0, high: 0}
+  maize:
+    label: "Maize"
+    family: cereal
+    season: summer
+    planting_window: {start: "04-15", end: "06-15"}
+    stages_days: {initial: 20, development: 35, mid: 40, late: 25}
+    kc: {initial: 0.30, mid: 1.20, late: 0.35}
+    root_depth_m: 1.5
+    depletion_fraction: 0.55
+    ky: 1.25
+    n_credit_kg_ha: {low: 0, high: 0}
+  sorghum:
+    label: "Sorghum"
+    family: cereal
+    season: summer
+    planting_window: {start: "05-01", end: "06-30"}
+    stages_days: {initial: 20, development: 35, mid: 40, late: 25}
+    kc: {initial: 0.35, mid: 1.05, late: 0.35}
+    root_depth_m: 1.5
+    depletion_fraction: 0.55
+    ky: 0.90
+    n_credit_kg_ha: {low: 0, high: 0}
+  berseem_clover:
+    label: "Berseem clover"
+    family: legume
+    season: winter
+    planting_window: {start: "09-15", end: "11-15"}
+    stages_days: {initial: 20, development: 30, mid: 120, late: 25}
+    kc: {initial: 0.40, mid: 1.10, late: 1.05}
+    root_depth_m: 0.8
+    depletion_fraction: 0.55
+    ky: 1.00
+    n_credit_kg_ha: {low: 40, high: 70}
+    n_credit_source: "assumption:berseem_n_fixation"
+  faba_bean:
+    label: "Faba bean"
+    family: legume
+    season: winter
+    planting_window: {start: "10-15", end: "11-30"}
+    stages_days: {initial: 25, development: 35, mid: 45, late: 30}
+    kc: {initial: 0.50, mid: 1.15, late: 0.30}
+    root_depth_m: 0.7
+    depletion_fraction: 0.45
+    ky: 1.15
+    n_credit_kg_ha: {low: 50, high: 90}
+    n_credit_source: "assumption:faba_n_fixation"
+  sugar_beet:
+    label: "Sugar beet"
+    family: root
+    season: winter
+    planting_window: {start: "09-15", end: "11-15"}
+    stages_days: {initial: 30, development: 60, mid: 100, late: 40}
+    kc: {initial: 0.35, mid: 1.20, late: 0.70}
+    root_depth_m: 1.0
+    depletion_fraction: 0.50
+    ky: 1.00
+    n_credit_kg_ha: {low: 0, high: 0}
+  cotton:
+    label: "Cotton"
+    family: fibre
+    season: summer
+    planting_window: {start: "03-15", end: "04-30"}
+    stages_days: {initial: 30, development: 50, mid: 60, late: 30}
+    kc: {initial: 0.35, mid: 1.18, late: 0.60}
+    root_depth_m: 1.0
+    depletion_fraction: 0.65
+    ky: 0.85
+    n_credit_kg_ha: {low: 0, high: 0}
+  fallow:
+    label: "Fallow"
+    family: fallow
+    season: any
+    planting_window: null
+    stages_days: {initial: 0, development: 0, mid: 0, late: 0}
+    kc: {initial: 0.0, mid: 0.0, late: 0.0}
+    root_depth_m: 0.0
+    depletion_fraction: 0.0
+    ky: 0.0
+    n_credit_kg_ha: {low: 0, high: 0}

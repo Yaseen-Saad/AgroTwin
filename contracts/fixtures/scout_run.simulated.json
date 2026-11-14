@@ -1,0 +1,83 @@
+{
+  "run_id": "scout_sim_20261114_001",
+  "site_id": "delta_01",
+  "mode": "SIMULATED",
+  "robot": "verdex",
+  "sent_at": "2026-11-14T09:00:00Z",
+  "fw": "sim-0.1.0",
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14 (twin-experiment style fixture)",
+  "points": [
+    {
+      "t": "2026-11-14T08:00:00Z",
+      "lat": null,
+      "lon": null,
+      "plot_label": "north strip",
+      "soil_raw": 1820,
+      "soil_vwc_pct": 21.4,
+      "soil_calibration_id": "sim_cal_v1",
+      "air_temp_c": 24.8,
+      "air_rh_pct": 58,
+      "rain_flag": false,
+      "plant_health": {
+        "label": "healthy",
+        "confidence": 0.91,
+        "model": "verdex-planthealth v0.3 (prior work)",
+        "image_ref": "sim_0001.jpg"
+      }
+    },
+    {
+      "t": "2026-11-14T08:05:00Z",
+      "lat": null,
+      "lon": null,
+      "plot_label": "north strip",
+      "soil_raw": 1802,
+      "soil_vwc_pct": 21.1,
+      "soil_calibration_id": "sim_cal_v1",
+      "air_temp_c": 25.2,
+      "air_rh_pct": 56,
+      "rain_flag": false,
+      "plant_health": {
+        "label": "healthy",
+        "confidence": 0.88,
+        "model": "verdex-planthealth v0.3 (prior work)",
+        "image_ref": "sim_0002.jpg"
+      }
+    },
+    {
+      "t": "2026-11-14T08:10:00Z",
+      "lat": null,
+      "lon": null,
+      "plot_label": "north strip",
+      "soil_raw": 1774,
+      "soil_vwc_pct": 20.6,
+      "soil_calibration_id": "sim_cal_v1",
+      "air_temp_c": 25.6,
+      "air_rh_pct": 55,
+      "rain_flag": false,
+      "plant_health": {
+        "label": "diseased",
+        "confidence": 0.72,
+        "model": "verdex-planthealth v0.3 (prior work)",
+        "image_ref": "sim_0003.jpg"
+      }
+    },
+    {
+      "t": "2026-11-14T08:15:00Z",
+      "lat": null,
+      "lon": null,
+      "plot_label": "north strip",
+      "soil_raw": 1758,
+      "soil_vwc_pct": 20.3,
+      "soil_calibration_id": "sim_cal_v1",
+      "air_temp_c": 26.1,
+      "air_rh_pct": 54,
+      "rain_flag": false,
+      "plant_health": {
+        "label": "unknown",
+        "confidence": 0.41,
+        "model": "verdex-planthealth v0.3 (prior work)",
+        "image_ref": "sim_0004.jpg"
+      }
+    }
+  ]
+}

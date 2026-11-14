@@ -1,0 +1,181 @@
+{
+  "site_id": "delta_01",
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14 (illustrative fixture, not a real replay)",
+  "mode": "NONE",
+  "years": [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+  "scenario": {
+    "rain_mult": 1.0,
+    "temp_offset_c": 0,
+    "price_mult": 1.0
+  },
+  "rotations": [
+    {
+      "rotation_id": "existing",
+      "label": "Existing rotation (wheat-maize)",
+      "windows": [
+        {
+          "start_year": 1991,
+          "years": [1991, 1992, 1993],
+          "water_use_mm": 912,
+          "irrigation_mm": 640,
+          "deficit_days": 22,
+          "stress_days": 31,
+          "bare_days": 52,
+          "erosion_index": 12.4,
+          "max_depletion_mm": 88,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1992,
+          "years": [1992, 1993, 1994],
+          "water_use_mm": 948,
+          "irrigation_mm": 690,
+          "deficit_days": 27,
+          "stress_days": 38,
+          "bare_days": 50,
+          "erosion_index": 14.1,
+          "max_depletion_mm": 92,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1993,
+          "years": [1993, 1994, 1995],
+          "water_use_mm": 889,
+          "irrigation_mm": 612,
+          "deficit_days": 18,
+          "stress_days": 26,
+          "bare_days": 52,
+          "erosion_index": 11.2,
+          "max_depletion_mm": 84,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1994,
+          "years": [1994, 1995, 1996],
+          "water_use_mm": 903,
+          "irrigation_mm": 630,
+          "deficit_days": 21,
+          "stress_days": 30,
+          "bare_days": 52,
+          "erosion_index": 12.0,
+          "max_depletion_mm": 86,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1995,
+          "years": [1995, 1996, 1997],
+          "water_use_mm": 861,
+          "irrigation_mm": 590,
+          "deficit_days": 15,
+          "stress_days": 22,
+          "bare_days": 52,
+          "erosion_index": 10.1,
+          "max_depletion_mm": 80,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1996,
+          "years": [1996, 1997, 1998],
+          "water_use_mm": 926,
+          "irrigation_mm": 668,
+          "deficit_days": 24,
+          "stress_days": 34,
+          "bare_days": 50,
+          "erosion_index": 13.2,
+          "max_depletion_mm": 90,
+          "n_credit_kg_ha": {"low": 0, "high": 0, "source": "computed"},
+          "source": "computed"
+        }
+      ]
+    },
+    {
+      "rotation_id": "alt_water",
+      "label": "Water-saving rotation (berseem-maize)",
+      "windows": [
+        {
+          "start_year": 1991,
+          "years": [1991, 1992, 1993],
+          "water_use_mm": 724,
+          "irrigation_mm": 455,
+          "deficit_days": 9,
+          "stress_days": 14,
+          "bare_days": 38,
+          "erosion_index": 6.2,
+          "max_depletion_mm": 64,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1992,
+          "years": [1992, 1993, 1994],
+          "water_use_mm": 758,
+          "irrigation_mm": 488,
+          "deficit_days": 12,
+          "stress_days": 18,
+          "bare_days": 36,
+          "erosion_index": 7.0,
+          "max_depletion_mm": 68,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1993,
+          "years": [1993, 1994, 1995],
+          "water_use_mm": 701,
+          "irrigation_mm": 432,
+          "deficit_days": 7,
+          "stress_days": 11,
+          "bare_days": 38,
+          "erosion_index": 5.4,
+          "max_depletion_mm": 61,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1994,
+          "years": [1994, 1995, 1996],
+          "water_use_mm": 716,
+          "irrigation_mm": 446,
+          "deficit_days": 8,
+          "stress_days": 13,
+          "bare_days": 38,
+          "erosion_index": 5.8,
+          "max_depletion_mm": 62,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1995,
+          "years": [1995, 1996, 1997],
+          "water_use_mm": 684,
+          "irrigation_mm": 420,
+          "deficit_days": 6,
+          "stress_days": 9,
+          "bare_days": 38,
+          "erosion_index": 4.9,
+          "max_depletion_mm": 58,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        },
+        {
+          "start_year": 1996,
+          "years": [1996, 1997, 1998],
+          "water_use_mm": 742,
+          "irrigation_mm": 472,
+          "deficit_days": 10,
+          "stress_days": 16,
+          "bare_days": 36,
+          "erosion_index": 6.6,
+          "max_depletion_mm": 66,
+          "n_credit_kg_ha": {"low": 40, "high": 70, "source": "assumption:berseem_n_fixation"},
+          "source": "computed"
+        }
+      ]
+    }
+  ]
+}

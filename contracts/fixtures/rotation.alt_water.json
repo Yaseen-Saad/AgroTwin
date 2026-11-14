@@ -1,0 +1,14 @@
+{
+  "rotation_id": "alt_water",
+  "label": "Water-saving rotation (berseem-maize)",
+  "is_existing": false,
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14",
+  "slots": [
+    {"year": 1, "season": "winter", "crop": "berseem_clover"},
+    {"year": 1, "season": "summer", "crop": "maize"},
+    {"year": 2, "season": "winter", "crop": "berseem_clover"},
+    {"year": 2, "season": "summer", "crop": "maize"},
+    {"year": 3, "season": "winter", "crop": "berseem_clover"},
+    {"year": 3, "season": "summer", "crop": "sorghum"}
+  ]
+}

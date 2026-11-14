@@ -1,0 +1,14 @@
+{
+  "rotation_id": "existing",
+  "label": "Existing rotation (wheat-maize)",
+  "is_existing": true,
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14",
+  "slots": [
+    {"year": 1, "season": "winter", "crop": "wheat"},
+    {"year": 1, "season": "summer", "crop": "maize"},
+    {"year": 2, "season": "winter", "crop": "wheat"},
+    {"year": 2, "season": "summer", "crop": "maize"},
+    {"year": 3, "season": "winter", "crop": "wheat"},
+    {"year": 3, "season": "summer", "crop": "fallow"}
+  ]
+}

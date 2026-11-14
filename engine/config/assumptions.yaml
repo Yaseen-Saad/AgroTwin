@@ -1,0 +1,138 @@
+# AI-generated under human review (opencode/big-pickle, 2026-11-14). See docs/AI_USE.md.
+# Every editable threshold used by the engine. A number that is not measured or cited must
+# exist here before its assumption:<id> tag may appear in code or data.
+version: "0.1.0"
+generated_by: "agent-0 / opencode/big-pickle / 2026-11-14"
+review_status: "provisional; owner confirmation required before Gate 2"
+
+assumptions:
+  heavy_rain_mm:
+    value: 25
+    unit: mm/day
+    description: "Daily rainfall above which a bare-soil day counts toward the erosion index."
+    source: "assumption:heavy_rain_mm"
+    editable: true
+  runoff_cn:
+    value: 75
+    unit: curve_number
+    description: "Placeholder NRCS curve number until a site-specific hydrologic soil group is set."
+    source: "assumption:runoff_cn"
+    editable: true
+  irrigation_efficiency:
+    value: 0.8
+    unit: fraction
+    description: "Share of applied irrigation that reaches the root zone."
+    source: "assumption:irrigation_efficiency"
+    editable: true
+  amber_margin:
+    value: 0.1
+    unit: fraction_of_cost
+    description: "Profit above zero but below this share of window cost is amber in the barcode."
+    source: "assumption:amber_margin"
+    editable: true
+  sigma_floor:
+    value: 0.05
+    unit: relative_wetness
+    description: "Minimum sensor error used by fusion; prevents false certainty."
+    source: "assumption:sigma_floor"
+    editable: true
+  ess_min:
+    value: 5
+    unit: effective_years
+    description: "Minimum effective sample size before fusion widens sigma."
+    source: "assumption:ess_min"
+    editable: true
+  post_wetting_hours:
+    value: 24
+    unit: hours
+    description: "Readings taken within this window after rain or irrigation are excluded from fusion."
+    source: "assumption:post_wetting_hours"
+    editable: true
+  confidence_low_below:
+    value: 10
+    unit: readings
+    description: "Fewer valid readings than this gives a low confidence label."
+    source: "assumption:confidence_low_below"
+    editable: true
+  confidence_high_above:
+    value: 40
+    unit: readings
+    description: "More valid readings than this gives a high confidence label."
+    source: "assumption:confidence_high_above"
+    editable: true
+  coverage_band_low:
+    value: 0.7
+    unit: fraction
+    description: "Lower edge of the acceptable twin-experiment coverage band."
+    source: "assumption:coverage_band_low"
+    editable: true
+  coverage_band_high:
+    value: 0.9
+    unit: fraction
+    description: "Upper edge of the acceptable twin-experiment coverage band."
+    source: "assumption:coverage_band_high"
+    editable: true
+  danger_z:
+    value: 2.0
+    unit: robust_z_score
+    description: "Absolute robust z-score that starts a danger window."
+    source: "assumption:danger_z"
+    editable: true
+  danger_min_days:
+    value: 5
+    unit: consecutive_days
+    description: "Minimum consecutive days above danger_z to flag a danger window."
+    source: "assumption:danger_min_days"
+    editable: true
+  danger_window_days:
+    value: 15
+    unit: days
+    description: "Half-width of the day-of-year window used to compute the robust baseline."
+    source: "assumption:danger_window_days"
+    editable: true
+  tie_band:
+    value: 0.05
+    unit: fraction_of_score_range
+    description: "Top two rotations closer than this are reported as no clear winner."
+    source: "assumption:tie_band"
+    editable: true
+  vision_min_conf:
+    value: 0.6
+    unit: probability
+    description: "Plant-health labels below this confidence become unknown."
+    source: "assumption:vision_min_conf"
+    editable: true
+  vision_alert_share:
+    value: 0.2
+    unit: fraction_of_images
+    description: "Diseased share that raises a blind-spot warning."
+    source: "assumption:vision_alert_share"
+    editable: true
+  vision_alert_min_images:
+    value: 20
+    unit: images
+    description: "Minimum image count before a diseased-share alert is raised."
+    source: "assumption:vision_alert_min_images"
+    editable: true
+  berseem_n_fixation:
+    value: 40
+    high: 70
+    unit: kg_N_per_ha
+    description: "Provisional legume nitrogen credit range for berseem clover."
+    source: "assumption:berseem_n_fixation"
+    editable: true
+    citation_status: "provisional; agronomist review required"
+  faba_n_fixation:
+    value: 50
+    high: 90
+    unit: kg_N_per_ha
+    description: "Provisional legume nitrogen credit range for faba bean."
+    source: "assumption:faba_n_fixation"
+    editable: true
+    citation_status: "provisional; agronomist review required"
+  hargreaves_fallback:
+    value: true
+    unit: boolean
+    description: "Use Hargreaves when humidity, wind or solar radiation is missing."
+    source: "assumption:hargreaves_fallback"
+    editable: true

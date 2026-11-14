@@ -1,0 +1,14 @@
+{
+  "rotation_id": "alt_soil",
+  "label": "Soil-building rotation (faba-sorghum)",
+  "is_existing": false,
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14",
+  "slots": [
+    {"year": 1, "season": "winter", "crop": "faba_bean"},
+    {"year": 1, "season": "summer", "crop": "sorghum"},
+    {"year": 2, "season": "winter", "crop": "faba_bean"},
+    {"year": 2, "season": "summer", "crop": "sorghum"},
+    {"year": 3, "season": "winter", "crop": "faba_bean"},
+    {"year": 3, "season": "summer", "crop": "fallow"}
+  ]
+}

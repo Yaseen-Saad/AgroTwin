@@ -1,0 +1,27 @@
+# AI-generated under human review (opencode/big-pickle, 2026-11-14). See docs/AI_USE.md.
+# Volumetric water content at field capacity (FC) and wilting point (WP).
+# Source: FAO Irrigation and Drainage Paper 56, Table 19 (provisional transcription).
+# Agent 2 must verify each row against the source table and record the exact page/row.
+version: "0.1.0"
+generated_by: "agent-0 / opencode/big-pickle / 2026-11-14"
+citation:
+  work: "FAO Irrigation and Drainage Paper 56 (FAO-56)"
+  table: "Table 19"
+  status: "provisional; verify exact values before Gate 2"
+
+soil_classes:
+  sand:
+    theta_fc: 0.10
+    theta_wp: 0.05
+  sandy_loam:
+    theta_fc: 0.20
+    theta_wp: 0.10
+  loam:
+    theta_fc: 0.29
+    theta_wp: 0.14
+  clay_loam:
+    theta_fc: 0.36
+    theta_wp: 0.20
+  clay:
+    theta_fc: 0.42
+    theta_wp: 0.26

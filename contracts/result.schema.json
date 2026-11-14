@@ -1,0 +1,398 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "result.schema.json",
+  "title": "AgroTwin result",
+  "description": "Full API/UI result: per-rotation ranges, Harvest Barcode, fusion block, scoring, evidence and blind spots. Every number carries a source tag.",
+  "x-schema-version": "1.0.0",
+  "x-generated-by": "agent-0 / opencode/big-pickle / 2026-11-14",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "version",
+    "site_id",
+    "generated_by",
+    "mode",
+    "scenario",
+    "years",
+    "rotations",
+    "fusion",
+    "scout_summary",
+    "ranking"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "site_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_]*$"
+    },
+    "generated_by": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["LIVE", "REPLAY", "SIMULATED", "NONE"]
+    },
+    "scenario": {
+      "type": "object",
+      "required": ["rain_mult", "temp_offset_c", "price_mult"],
+      "additionalProperties": false,
+      "properties": {
+        "rain_mult": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "temp_offset_c": {
+          "type": "number",
+          "minimum": -10,
+          "maximum": 10
+        },
+        "price_mult": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        }
+      }
+    },
+    "years": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 1981,
+        "maximum": 2100
+      }
+    },
+    "rotations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "rotation_id",
+          "label",
+          "metrics",
+          "evidence",
+          "benefits",
+          "gaps",
+          "review_flags",
+          "barcode",
+          "worst_year",
+          "loss_year_share",
+          "excluded"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "rotation_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_]*$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "metrics": {
+            "type": "object",
+            "required": [
+              "water_use_mm",
+              "deficit_days",
+              "bare_days",
+              "erosion_index",
+              "n_credit_kg_ha",
+              "profit_per_ha",
+              "loss_year_share"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "water_use_mm": {"$ref": "#/$defs/rangeMetric"},
+              "deficit_days": {"$ref": "#/$defs/rangeMetric"},
+              "bare_days": {"$ref": "#/$defs/rangeMetric"},
+              "erosion_index": {"$ref": "#/$defs/rangeMetric"},
+              "n_credit_kg_ha": {"$ref": "#/$defs/lowHighMetric"},
+              "profit_per_ha": {"$ref": "#/$defs/rangeMetric"},
+              "loss_year_share": {"$ref": "#/$defs/valueMetric"}
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "benefits": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "gaps": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "review_flags": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "barcode": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["year", "profit_per_ha", "class", "source"],
+              "additionalProperties": false,
+              "properties": {
+                "year": {
+                  "type": "integer",
+                  "minimum": 1981,
+                  "maximum": 2100
+                },
+                "profit_per_ha": {
+                  "type": "number"
+                },
+                "class": {
+                  "type": "string",
+                  "enum": ["green", "amber", "red"]
+                },
+                "currency": {
+                  "type": "string",
+                  "pattern": "^[A-Z]{3}$"
+                },
+                "source": {"$ref": "#/$defs/sourceTag"}
+              }
+            }
+          },
+          "worst_year": {
+            "type": "object",
+            "required": ["year", "profit_per_ha", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "year": {
+                "type": "integer",
+                "minimum": 1981,
+                "maximum": 2100
+              },
+              "profit_per_ha": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string",
+                "pattern": "^[A-Z]{3}$"
+              },
+              "source": {"$ref": "#/$defs/sourceTag"}
+            }
+          },
+          "loss_year_share": {
+            "type": "object",
+            "required": ["value", "source"],
+            "additionalProperties": false,
+            "properties": {
+              "value": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "source": {"$ref": "#/$defs/sourceTag"}
+            }
+          },
+          "excluded": {
+            "type": "object",
+            "required": ["is_excluded", "reasons"],
+            "additionalProperties": false,
+            "properties": {
+              "is_excluded": {"type": "boolean"},
+              "reasons": {
+                "type": "array",
+                "items": {"type": "string", "minLength": 1}
+              }
+            }
+          }
+        }
+      }
+    },
+    "fusion": {
+      "type": "object",
+      "required": [
+        "used",
+        "scout_run_ids",
+        "n_points",
+        "weights_by_year",
+        "ess",
+        "sigma_used",
+        "range_width",
+        "confidence_label",
+        "bias_check"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "used": {"type": "boolean"},
+        "scout_run_ids": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "n_points": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "weights_by_year": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[0-9]{4}$": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "ess": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sigma_used": {
+          "type": "number",
+          "minimum": 0
+        },
+        "range_width": {
+          "type": "object",
+          "required": ["without_scout", "with_scout", "unit", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "without_scout": {"type": "number", "minimum": 0},
+            "with_scout": {"type": "number", "minimum": 0},
+            "unit": {"type": "string", "minLength": 1},
+            "source": {"$ref": "#/$defs/sourceTag"}
+          }
+        },
+        "confidence_label": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "bias_check": {
+          "type": "object",
+          "required": ["n_overlap_days", "mean_gap", "applied"],
+          "additionalProperties": false,
+          "properties": {
+            "n_overlap_days": {"type": "integer", "minimum": 0},
+            "mean_gap": {"type": ["number", "null"]},
+            "applied": {"type": "boolean"}
+          }
+        },
+        "notes": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "scout_summary": {
+      "type": "object",
+      "required": ["sightings", "model", "note"],
+      "additionalProperties": false,
+      "properties": {
+        "sightings": {
+          "type": "object",
+          "required": ["healthy", "diseased", "unknown"],
+          "additionalProperties": false,
+          "properties": {
+            "healthy": {"type": "integer", "minimum": 0},
+            "diseased": {"type": "integer", "minimum": 0},
+            "unknown": {"type": "integer", "minimum": 0}
+          }
+        },
+        "model": {"type": "string", "minLength": 1},
+        "note": {"type": "string", "minLength": 1}
+      }
+    },
+    "ranking": {
+      "type": "object",
+      "required": ["weights", "order"],
+      "additionalProperties": false,
+      "properties": {
+        "weights": {
+          "type": "object",
+          "required": ["water", "soil", "profit"],
+          "additionalProperties": false,
+          "properties": {
+            "water": {"type": "number", "minimum": 0, "maximum": 1},
+            "soil": {"type": "number", "minimum": 0, "maximum": 1},
+            "profit": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "order": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_]*$"
+          }
+        },
+        "tie_band_applied": {"type": "boolean"},
+        "notes": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source", "editable"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "description": {"type": "string"},
+          "value": {"type": ["string", "number", "boolean", "null"]},
+          "source": {"$ref": "#/$defs/sourceTag"},
+          "editable": {"type": "boolean"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sourceTag": {
+      "type": "string",
+      "pattern": "^(nasa:[A-Za-z0-9_.:-]+|computed|scout:[A-Za-z0-9_.:-]+|quoted:https?://\\S+|assumption:[a-z0-9_]+)$"
+    },
+    "rangeMetric": {
+      "type": "object",
+      "required": ["p10", "median", "p90", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "p10": {"type": "number"},
+        "median": {"type": "number"},
+        "p90": {"type": "number"},
+        "unit": {"type": "string"},
+        "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+        "source": {"$ref": "#/$defs/sourceTag"}
+      }
+    },
+    "valueMetric": {
+      "type": "object",
+      "required": ["value", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string"},
+        "source": {"$ref": "#/$defs/sourceTag"}
+      }
+    },
+    "lowHighMetric": {
+      "type": "object",
+      "required": ["low", "high", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "low": {"type": "number"},
+        "high": {"type": "number"},
+        "unit": {"type": "string"},
+        "source": {"$ref": "#/$defs/sourceTag"}
+      }
+    }
+  }
+}

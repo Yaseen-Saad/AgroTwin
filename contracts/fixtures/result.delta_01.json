@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "version": "0.1.0",
+  "site_id": "delta_01",
+  "generated_by": "agent-0 / opencode/big-pickle / 2026-11-14 (illustrative fixture; not a real site result)",
+  "mode": "SIMULATED",
+  "scenario": {
+    "rain_mult": 1.0,
+    "temp_offset_c": 0,
+    "price_mult": 1.0
+  },
+  "years": [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+  "rotations": [
+    {
+      "rotation_id": "existing",
+      "label": "Existing rotation (wheat-maize)",
+      "metrics": {
+        "water_use_mm": {"p10": 820, "median": 905, "p90": 990, "unit": "mm_per_year", "source": "computed"},
+        "deficit_days": {"p10": 12, "median": 22, "p90": 35, "unit": "days_per_year", "source": "computed"},
+        "bare_days": {"p10": 45, "median": 52, "p90": 60, "unit": "days_per_year", "source": "computed"},
+        "erosion_index": {"p10": 8, "median": 12, "p90": 18, "unit": "index", "source": "computed"},
+        "n_credit_kg_ha": {"low": 0, "high": 0, "unit": "kg_N_per_ha", "source": "computed"},
+        "profit_per_ha": {"p10": -960, "median": 4150, "p90": 7550, "currency": "EGP", "source": "computed"},
+        "loss_year_share": {"value": 0.25, "unit": "fraction", "source": "computed"}
+      },
+      "evidence": [
+        "Wheat-maize is the farmer's current rotation and is replayed through every historical year.",
+        "The replay uses the site's own POWER weather rather than a regional average."
+      ],
+      "benefits": [
+        "Familiar crop calendar and existing machinery.",
+        "No new crop-management skill is required from the farmer."
+      ],
+      "gaps": [
+        "Assumes the historical weather distribution remains representative.",
+        "The water balance does not model salinity build-up."
+      ],
+      "review_flags": [
+        "Confirm local wheat and maize planting windows with an agronomist.",
+        "Check current irrigation water rights and delivery schedule."
+      ],
+      "barcode": [
+        {"year": 1991, "profit_per_ha": 5200, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1992, "profit_per_ha": -1800, "currency": "EGP", "class": "red", "source": "computed"},
+        {"year": 1993, "profit_per_ha": 7100, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1994, "profit_per_ha": 3400, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1995, "profit_per_ha": 8600, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1996, "profit_per_ha": 1200, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1997, "profit_per_ha": -600, "currency": "EGP", "class": "red", "source": "computed"},
+        {"year": 1998, "profit_per_ha": 4900, "currency": "EGP", "class": "green", "source": "computed"}
+      ],
+      "worst_year": {"year": 1992, "profit_per_ha": -1800, "currency": "EGP", "source": "computed"},
+      "loss_year_share": {"value": 0.25, "source": "computed"},
+      "excluded": {"is_excluded": false, "reasons": []}
+    },
+    {
+      "rotation_id": "alt_water",
+      "label": "Water-saving rotation (berseem-maize)",
+      "metrics": {
+        "water_use_mm": {"p10": 640, "median": 720, "p90": 815, "unit": "mm_per_year", "source": "computed"},
+        "deficit_days": {"p10": 5, "median": 11, "p90": 20, "unit": "days_per_year", "source": "computed"},
+        "bare_days": {"p10": 30, "median": 38, "p90": 45, "unit": "days_per_year", "source": "computed"},
+        "erosion_index": {"p10": 4, "median": 7, "p90": 11, "unit": "index", "source": "computed"},
+        "n_credit_kg_ha": {"low": 40, "high": 70, "unit": "kg_N_per_ha", "source": "assumption:berseem_n_fixation"},
+        "profit_per_ha": {"p10": -60, "median": 4250, "p90": 6990, "currency": "EGP", "source": "computed"},
+        "loss_year_share": {"value": 0.125, "unit": "fraction", "source": "computed"}
+      },
+      "evidence": [
+        "The water balance replayed every historical year with berseem clover in the winter slot.",
+        "Berseem clover contributes a legume nitrogen credit in the replay."
+      ],
+      "benefits": [
+        "Lower modelled irrigation demand than the existing rotation.",
+        "A nitrogen credit reduces the modelled fertilizer bill."
+      ],
+      "gaps": [
+        "Berseem seed and forage market access vary locally.",
+        "The nitrogen credit is a cited range, not a field measurement."
+      ],
+      "review_flags": [
+        "Confirm the berseem cutting schedule and irrigation log for this field.",
+        "Check local forage demand before committing to the rotation."
+      ],
+      "barcode": [
+        {"year": 1991, "profit_per_ha": 4700, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1992, "profit_per_ha": -900, "currency": "EGP", "class": "red", "source": "computed"},
+        {"year": 1993, "profit_per_ha": 6600, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1994, "profit_per_ha": 3800, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1995, "profit_per_ha": 7900, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1996, "profit_per_ha": 2100, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1997, "profit_per_ha": 300, "currency": "EGP", "class": "amber", "source": "computed"},
+        {"year": 1998, "profit_per_ha": 5200, "currency": "EGP", "class": "green", "source": "computed"}
+      ],
+      "worst_year": {"year": 1992, "profit_per_ha": -900, "currency": "EGP", "source": "computed"},
+      "loss_year_share": {"value": 0.125, "source": "computed"},
+      "excluded": {"is_excluded": false, "reasons": []}
+    },
+    {
+      "rotation_id": "alt_soil",
+      "label": "Soil-building rotation (faba-sorghum)",
+      "metrics": {
+        "water_use_mm": {"p10": 560, "median": 640, "p90": 730, "unit": "mm_per_year", "source": "computed"},
+        "deficit_days": {"p10": 8, "median": 16, "p90": 26, "unit": "days_per_year", "source": "computed"},
+        "bare_days": {"p10": 60, "median": 68, "p90": 78, "unit": "days_per_year", "source": "computed"},
+        "erosion_index": {"p10": 11, "median": 16, "p90": 22, "unit": "index", "source": "computed"},
+        "n_credit_kg_ha": {"low": 50, "high": 90, "unit": "kg_N_per_ha", "source": "assumption:faba_n_fixation"},
+        "profit_per_ha": {"p10": -1220, "median": 3300, "p90": 5610, "currency": "EGP", "source": "computed"},
+        "loss_year_share": {"value": 0.25, "unit": "fraction", "source": "computed"}
+      },
+      "evidence": [
+        "Faba bean fixes nitrogen and the rotation leaves a fallow summer in its third year.",
+        "The replay covers every historical start year with the same water-balance rules."
+      ],
+      "benefits": [
+        "Soil cover improves relative to the existing rotation.",
+        "The legume nitrogen credit reduces modelled fertilizer need."
+      ],
+      "gaps": [
+        "Faba bean is sensitive to heat during flowering.",
+        "Nematode pressure is not observable from satellite data."
+      ],
+      "review_flags": [
+        "Check nematode history and local faba bean seed availability.",
+        "Confirm sorghum market access in the local area."
+      ],
+      "barcode": [
+        {"year": 1991, "profit_per_ha": 3900, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1992, "profit_per_ha": -1500, "currency": "EGP", "class": "red", "source": "computed"},
+        {"year": 1993, "profit_per_ha": 5400, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1994, "profit_per_ha": 2700, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1995, "profit_per_ha": 6100, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1996, "profit_per_ha": 800, "currency": "EGP", "class": "green", "source": "computed"},
+        {"year": 1997, "profit_per_ha": -1100, "currency": "EGP", "class": "red", "source": "computed"},
+        {"year": 1998, "profit_per_ha": 4300, "currency": "EGP", "class": "green", "source": "computed"}
+      ],
+      "worst_year": {"year": 1992, "profit_per_ha": -1500, "currency": "EGP", "source": "computed"},
+      "loss_year_share": {"value": 0.25, "source": "computed"},
+      "excluded": {"is_excluded": false, "reasons": []}
+    }
+  ],
+  "fusion": {
+    "used": true,
+    "scout_run_ids": ["scout_sim_20261114_001"],
+    "n_points": 24,
+    "weights_by_year": {
+      "1991": 0.09,
+      "1992": 0.06,
+      "1993": 0.14,
+      "1994": 0.11,
+      "1995": 0.18,
+      "1996": 0.12,
+      "1997": 0.07,
+      "1998": 0.23
+    },
+    "ess": 6.76,
+    "sigma_used": 0.06,
+    "range_width": {
+      "without_scout": 9200,
+      "with_scout": 6400,
+      "unit": "EGP_per_ha",
+      "source": "computed"
+    },
+    "confidence_label": "medium",
+    "bias_check": {
+      "n_overlap_days": 0,
+      "mean_gap": null,
+      "applied": false
+    },
+    "notes": [
+      "SMAP comparison not run: no overlapping satellite series cached for this fixture."
+    ]
+  },
+  "scout_summary": {
+    "sightings": {"healthy": 18, "diseased": 4, "unknown": 2},
+    "model": "verdex-planthealth (prior work; held-out metrics pending confirmation)",
+    "note": "Sightings are observations, not diagnoses."
+  },
+  "ranking": {
+    "weights": {"water": 0.34, "soil": 0.33, "profit": 0.33},
+    "order": ["alt_water", "alt_soil", "existing"],
+    "tie_band_applied": false,
+    "notes": ["Weighted min-max scores across the three rotations."]
+  },
+  "assumptions": [
+    {"id": "amber_margin", "description": "Amber when profit is between zero and this share of window cost.", "value": 0.1, "source": "assumption:amber_margin", "editable": true},
+    {"id": "sigma_floor", "description": "Minimum sensor error used by fusion.", "value": 0.05, "source": "assumption:sigma_floor", "editable": true},
+    {"id": "ess_min", "description": "Minimum effective sample size before sigma is widened.", "value": 5, "source": "assumption:ess_min", "editable": true},
+    {"id": "berseem_n_fixation", "description": "Legume nitrogen credit range for berseem clover.", "value": "40-70 kg N/ha", "source": "assumption:berseem_n_fixation", "editable": true},
+    {"id": "faba_n_fixation", "description": "Legume nitrogen credit range for faba bean.", "value": "50-90 kg N/ha", "source": "assumption:faba_n_fixation", "editable": true}
+  ]
+}
