@@ -10,6 +10,19 @@ project uses Semantic Versioning. `VERSION` is the single source of truth.
 - Two-agent orchestration room in `agents/` with task board, contact log, status snapshot,
   decision log and a bootstrap prompt for the Builder.
 - Gate 0 repository spine and tests.
+- Fixture-backed FastAPI service: health, demo, diagnose, simulate, Scout intake, calibration
+  and field card; every result is contract-validated and mode-tagged.
+- Public `validate_document` for in-memory contract checks; API tests cover auth-before-body,
+  duplicate runs, calibration minimums, schema validity and the 3-second demo budget.
+
+### Fixed
+
+- Import ordering, line lengths and `zip(strict=...)` flagged by the first ruff run.
+
+### Known limitations
+
+- `api/` serves illustrative fixtures; the real engine swap waits on B-02.
+- `/demo` supports only `delta_01` until the other caches and results exist.
 
 ## [0.1.0] — 2026-11-14
 

@@ -8,7 +8,7 @@
 
 | Track | Active task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-02` API endpoints on fixtures | `IN_PROGRESS` | `L-03` web app |
+| Lead (L) | `L-03` web app and lenses | `IN_PROGRESS` | L-02 real-engine swap after B-02 |
 | Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
 
 ## Board
@@ -17,8 +17,8 @@
 | --- | --- | --- | --- | --- | --- | --- |
 | L-01 | L | 0 | P0 | Gate 0 spine, version, tests, tags | — | `DONE` |
 | B-01 | B | 0 | P0 | POWER ingest, 3 site caches, fallback | L-01 contracts | `ASSIGNED` |
-| L-02 | L | 1 | P0 | API endpoints on fixtures, then real engine | L-01, B-02 | `IN_PROGRESS` |
-| L-03 | L | 1 | P0 | Web app: map, barcode, mixer, sliders, lenses | L-01, L-02 fixtures | `TODO` |
+| L-02 | L | 1 | P0 | API endpoints on fixtures, then real engine | L-01, B-02 | `REVIEW` (fixtures green; real-engine swap after B-02) |
+| L-03 | L | 1 | P0 | Web app: map, barcode, mixer, sliders, lenses | L-01, L-02 fixtures | `IN_PROGRESS` |
 | B-02 | B | 1 | P0 | FAO-56 water balance, replay, danger windows | L-01, B-01 | `TODO` |
 | B-03 | B | 2 | P0 | Economics, barcode class, ranking, prices | B-02 | `TODO` |
 | B-04 | B | 2 | P0 | Fusion, bias check, twin experiment | B-02 | `TODO` |
@@ -68,7 +68,13 @@ python -m contracts.validate --all; python -m pytest; python -m ruff check .
 
 ### L-02 · API endpoints on fixtures, then real engine
 
-**Status:** `IN_PROGRESS` · **Wave:** 1 · **Priority:** P0
+**Status:** `REVIEW` (fixture phase) · **Wave:** 1 · **Priority:** P0
+
+**Evidence.** `python -m pytest tests/api` → 20 passed · full suite 87 passed ·
+`python -m contracts.validate --all` → 7/7 · `python -m ruff check .` → all checks passed.
+`/health`, `/demo/{site}`, `/demo/{site}/feddan`, `POST /diagnose`, `POST /simulate`,
+`POST /scout/run`, `POST /scout/calibrate` and `POST /fieldcard` are live on fixtures. The
+real-engine swap remains open until B-02 lands; the contract is unchanged.
 
 **Goal.** FastAPI service with `/health`, `/demo/{site}`, `POST /diagnose`, `POST /simulate`,
 `POST /scout/run`, `POST /scout/calibrate`, `POST /fieldcard`. Serve fixtures first, then swap
@@ -93,7 +99,7 @@ python -m pytest tests/api
 
 ### L-03 · Frontend and lenses
 
-**Status:** `TODO` · **Wave:** 1 · **Priority:** P0
+**Status:** `IN_PROGRESS` · **Wave:** 1 · **Priority:** P0
 
 **Goal.** Next.js app built against fixtures: pin drop, diagnosis timeline, Harvest Barcode,
 three rotation cards with evidence/benefits/gaps/review flags, priority mixer, scenario sliders,

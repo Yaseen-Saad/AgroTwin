@@ -58,7 +58,7 @@ def test_board_has_every_task_card() -> None:
 def test_one_active_task_per_agent() -> None:
     board = _read("TASKS.md")
     assert board.count("`IN_PROGRESS`") >= 1
-    lead_block = board.split("### L-02", 1)[1].split("### L-03", 1)[0]
+    lead_block = board.split("### L-03", 1)[1].split("### L-04", 1)[0]
     builder_block = board.split("### B-01", 1)[1].split("### B-02", 1)[0]
     assert "**Status:** `IN_PROGRESS`" in lead_block
     assert "**Status:** `ASSIGNED`" in builder_block
@@ -89,7 +89,7 @@ def test_status_names_both_agents_and_current_tasks() -> None:
     status = _read("STATUS.md")
     assert "Lead (L)" in status
     assert "Builder (B)" in status
-    assert "`L-02`" in status
+    assert "`L-03`" in status
     assert "`B-01`" in status
 
 

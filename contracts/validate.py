@@ -324,10 +324,9 @@ CROSS_CHECKS = {
 }
 
 
-def validate_fixture(kind: str, fixture_name: str, assumption_ids: set[str]) -> list[str]:
-    """Validate one fixture and return a list of human-readable errors."""
+def validate_document(kind: str, document: Any, assumption_ids: set[str]) -> list[str]:
+    """Validate an in-memory document of a known contract kind."""
     schema = load_json(SCHEMA_FILES[kind])
-    document = load_json(FIXTURES_DIR / fixture_name)
     errors: list[str] = []
 
     declared_version = schema.get("x-schema-version")
@@ -348,6 +347,11 @@ def validate_fixture(kind: str, fixture_name: str, assumption_ids: set[str]) -> 
     errors.extend(check_assumption_tags(document, assumption_ids))
     errors.extend(CROSS_CHECKS[kind](document, assumption_ids))
     return errors
+
+
+def validate_fixture(kind: str, fixture_name: str, assumption_ids: set[str]) -> list[str]:
+    """Validate one fixture and return a list of human-readable errors."""
+    return validate_document(kind, load_json(FIXTURES_DIR / fixture_name), assumption_ids)
 
 
 def main(argv: list[str] | None = None) -> int:

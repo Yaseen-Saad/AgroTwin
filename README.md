@@ -8,9 +8,10 @@ Built for **NASA Space Apps 2026 — Field Shift: Adapting Farms with NASA Data*
 
 ## Status
 
-**Gate 0 — bootstrap.** Contracts, fixtures, versioning and the assumptions ledger exist. The
-engine, API, web app, Scout bridge and Council are scaffolds. Nothing on screen may be presented
-as a validated result until `qa/REPORT.md` records it.
+**Gate 0 passed; Gate 1 in progress.** Contracts, fixtures, versioning and the assumptions ledger
+are frozen. The API serves contract-valid fixtures; the replay engine, web app, Scout bridge and
+Council are still being built. Nothing on screen may be presented as a validated site result
+until `qa/REPORT.md` records it.
 
 - Two-agent build room: [`agents/`](agents/README.md)
 - What we are building: [`SPEC.md`](SPEC.md)

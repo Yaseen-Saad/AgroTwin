@@ -14,7 +14,7 @@ must survive a session or blocks a gate belongs here.
 | Gate | When (Cairo) | State | Evidence |
 | --- | --- | --- | --- |
 | 0 | Sat 13:00 | **passed** | Commit `2a7986d`, tag `gate-0`; 7/7 fixtures, 67 tests, ruff clean |
-| 1 | Sat 16:00 | not started | End-to-end on fixtures; simulator narrows the band |
+| 1 | Sat 16:00 | **in progress** | Fixture API live (20 tests); web app and hardware samples pending |
 | 2 | Sat 19:00 | not started | Real POWER caches; real engine behind the API |
 | 3 | Sun 09:00 | not started | Feature freeze; Arabic review; first real QA report |
 | 4 | Sun 14:00 | not started | Video, deck, project page, AI-use log |
@@ -94,9 +94,23 @@ live.
 
 **Next**
 
-1. L-02: API endpoints on fixtures, then the real engine behind the same result schema.
-2. L-03: web app and three lenses on fixtures.
+1. L-03: web app and three lenses on the fixture API.
+2. L-02 remainder: swap the real engine behind the unchanged result schema when B-02 lands.
 3. L-04: content, Council and the Number Auditor.
+
+**L-02 fixture evidence**
+
+```text
+python -m pytest tests/api      -> 20 passed
+python -m pytest               -> 87 passed
+python -m contracts.validate   -> 7/7 fixtures valid
+python -m ruff check .         -> all checks passed
+```
+
+Endpoints: `GET /health`, `GET /demo/{site}`, `GET /demo/{site}/feddan`, `POST /diagnose`,
+`POST /simulate`, `POST /scout/run`, `POST /scout/calibrate`, `POST /fieldcard`. Scout intake
+rejects a bad token before parsing the body and refuses a calibrated reading without a
+calibration id. All fixture results keep `mode` and add an illustrative-fixture note.
 
 **Blockers**
 

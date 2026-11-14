@@ -13,7 +13,7 @@ the spine and the API on fixtures.
 
 | Agent | Current task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-02` API endpoints on fixtures | `IN_PROGRESS` | `L-03` web app |
+| Lead (L) | `L-03` web app and lenses | `IN_PROGRESS` | L-02 real-engine swap after B-02 |
 | Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
 
 ## Gate checklist
@@ -54,12 +54,13 @@ the spine and the API on fixtures.
 | Command | Result | When |
 | --- | --- | --- |
 | `python -m contracts.validate --all` | 7/7 fixtures valid | 2026-11-14 |
-| `python -m pytest` | 67 passed in 1.11s | 2026-11-14 |
+| `python -m pytest` | 87 passed | 2026-11-14 |
+| `python -m pytest tests/api` | 20 passed | 2026-11-14 |
 | `python -m ruff check .` | all checks passed | 2026-11-14 |
 
 ## Known gaps
 
-- `api/` has only the health/demo scaffold; full endpoints are `L-02`.
-- `web/` is empty; `L-03` starts on fixtures.
+- `api/` serves contract-valid fixtures; the real-engine swap waits on B-02.
+- `web/` is empty; `L-03` starts against the fixture API.
 - `content/` and `council/` are empty; `L-04` owns them.
 - `qa/REPORT.md` does not exist yet; nothing may be presented as a validated result.

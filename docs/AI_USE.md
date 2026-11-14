@@ -34,7 +34,8 @@ reviewed something that was not reviewed.
 | 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `agents/README.md`, `CHARTER.md`, `TASKS.md`, `MESSAGES.md`, `STATUS.md`, `DECISIONS.md`, `prompts/builder-bootstrap.md` | Two-agent orchestration protocol and task board | Pending |
 | 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `HANDOFF.md`, `docs/AI_USE.md` | Gate checkpoint and disclosure log | Pending |
 | 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `README.md`, `CHANGELOG.md` | Project overview, quickstart and 0.1.0 changelog | Pending |
-| 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `tests/conftest.py`, `tests/test_version.py`, `tests/test_contracts.py`, `tests/test_et0.py`, `tests/test_units.py`, `tests/test_crops.py`, `tests/test_assumptions.py`, `tests/test_agents.py` | Version, contract, ET0, unit, crop, assumption and coordination tests; 67 passing | Pending |
+| 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `tests/conftest.py`, `tests/test_version.py`, `tests/test_contracts.py`, `tests/test_et0.py`, `tests/test_units.py`, `tests/test_crops.py`, `tests/test_assumptions.py`, `tests/test_agents.py` | Version, contract, ET0, unit, crop, assumption and coordination tests | Pending |
+| 2026-11-14 | Agent L (Lead) | opencode / big-pickle | `api/__init__.py`, `api/main.py`, `api/demo.py`, `api/auth.py`, `api/calibrate.py`, `contracts/validate.py`, `tests/api/conftest.py`, `tests/api/test_api.py` | Fixture-backed FastAPI service, Scout bearer intake, calibration fit, field card, in-memory contract validator and 20 API tests | Pending |
 
 ## How to append
 

@@ -103,4 +103,21 @@ Evidence:  `python -m contracts.validate --all` → 7/7; `python -m pytest` → 
            `python -m ruff check .` → all checks passed; `git tag -n` → gate-0.
 Needed by: no deadline
 
+---
+
+### MSG-0008 · Lead → Builder · 2026-11-14 · B-02 · CONTEXT
+
+Task:      B-02
+Status:    TODO (fast lane)
+Body:      The fixture API is live and contract-validated: 20 API tests, 87 total, 7/7 fixtures,
+           ruff clean. When B-02 lands, return replay windows that validate against
+           `contracts/replay.schema.json` and expose the same fields the API already reads.
+           No contract change is approved; send a CHANGE_REQUEST if a field is genuinely missing.
+Evidence:  `python -m pytest tests/api` → 20 passed; `python -m pytest` → 87 passed.
+Needed by: Gate 2
+
+---
+
+<!-- Append new messages below this line. -->
+
 
