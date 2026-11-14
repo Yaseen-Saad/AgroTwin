@@ -9,9 +9,10 @@ Built for **NASA Space Apps 2026 — Field Shift: Adapting Farms with NASA Data*
 ## Status
 
 **Gate 0 passed; Gate 1 in progress.** Contracts, fixtures, versioning and the assumptions ledger
-are frozen. The API serves contract-valid fixtures; the replay engine, web app, Scout bridge and
-Council are still being built. Nothing on screen may be presented as a validated site result
-until `qa/REPORT.md` records it.
+are frozen. The API serves contract-valid fixtures, the bilingual web app is built against
+them, and the Council core audits its own Field Card. Real-engine integration, the Scout bridge
+and full Council exposure through the API are still being built. Nothing on screen may be
+presented as a validated site result until `qa/REPORT.md` records it.
 
 - Two-agent build room: [`agents/`](agents/README.md)
 - What we are building: [`SPEC.md`](SPEC.md)
@@ -26,10 +27,16 @@ until `qa/REPORT.md` records it.
 .\tasks.ps1 test
 .\tasks.ps1 lint
 .\tasks.ps1 api      # http://127.0.0.1:8000/docs
+npm --prefix web install
+.\tasks.ps1 web      # http://127.0.0.1:3000
 ```
 
 GNU make users can run the equivalent targets: `make install`, `make validate`, `make test`,
 `make lint`, `make api`, `make web`, `make version`.
+
+The web app falls back to the bundled illustrative fixture when the API is unreachable. To point
+it at another API, set `NEXT_PUBLIC_API_BASE` before building. To allow another web origin, set
+`AGROTWIN_CORS_ORIGINS` on the API (default: `http://localhost:3000,http://127.0.0.1:3000`).
 
 ## Repository map
 

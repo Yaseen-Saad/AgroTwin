@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "agent-L / opencode/big-pickle / 2026-11-14",
+  "needs_native_review": true,
+  "mode": {
+    "LIVE": {"en": "LIVE", "ar": "مباشر"},
+    "REPLAY": {"en": "REPLAY", "ar": "إعادة"},
+    "SIMULATED": {"en": "SIMULATED", "ar": "محاكاة"},
+    "NONE": {"en": "NONE", "ar": "بدون مسح"}
+  },
+  "rotation": {
+    "existing": {"en": "Existing rotation (wheat-maize)", "ar": "الدورة الحالية (قمح-ذرة)"},
+    "alt_water": {"en": "Water-saving rotation (berseem-maize)", "ar": "دورة موفرة للماء (برسيم-ذرة)"},
+    "alt_soil": {"en": "Soil-building rotation (faba-sorghum)", "ar": "دورة لبناء التربة (فول-سورغم)"}
+  },
+  "advisor": {
+    "agronomist": {"en": "Agronomist", "ar": "مهندس زراعي"},
+    "economist": {"en": "Farm economist", "ar": "خبير اقتصادي زراعي"},
+    "scientist": {"en": "Data scientist", "ar": "عالم بيانات"}
+  },
+  "lens": {
+    "farmer": {"en": "Farmer", "ar": "مزارع"},
+    "investor": {"en": "Investor", "ar": "مستثمر"},
+    "scientist": {"en": "Scientist", "ar": "عالم"}
+  },
+  "unit": {
+    "EGP_per_ha": {"en": "EGP/ha", "ar": "جنيه/هكتار"},
+    "mm_per_year": {"en": "mm/yr", "ar": "مم/سنة"},
+    "days_per_year": {"en": "days/yr", "ar": "يوم/سنة"},
+    "kg_N_per_ha": {"en": "kg N/ha", "ar": "كغ ن/هكتار"},
+    "fraction": {"en": "fraction", "ar": "نسبة"},
+    "index": {"en": "index", "ar": "مؤشر"}
+  },
+  "print": {
+    "title": {"en": "AgroTwin Field Card", "ar": "بطاقة حقل AgroTwin"},
+    "site": {"en": "Site", "ar": "الموقع"},
+    "mode": {"en": "Mode", "ar": "الوضع"},
+    "rotation": {"en": "Rotation", "ar": "الدورة"},
+    "profit": {"en": "Profit range", "ar": "نطاق الربح"},
+    "median": {"en": "Median", "ar": "الوسيط"},
+    "water": {"en": "Water use", "ar": "استهلاك الماء"},
+    "worst": {"en": "Worst replayed year", "ar": "أسوأ سنة معادة"},
+    "scout": {"en": "Scout fusion", "ar": "دمج المسح"},
+    "blind": {"en": "Local review still needed", "ar": "ما زالت المراجعة المحلية مطلوبة"},
+    "note": {"en": "Ranges are not a forecast. Illustrative fixture.", "ar": "النطاقات ليست تنبؤاً. بيانات توضيحية."},
+    "qr": {"en": "Scan for the WhatsApp text", "ar": "امسح نص واتساب"}
+  }
+}

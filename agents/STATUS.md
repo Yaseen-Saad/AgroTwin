@@ -1,20 +1,20 @@
 # Status Snapshot
 
-> Updated: 2026-11-14 · Gate: **0 passed** · Version: **0.1.0**
+> Updated: 2026-11-14 · Gate: **0 passed; Gate 1 in progress** · Version: **0.1.0**
 > Owner of this file: **Agent L**. The Builder reports through `MESSAGES.md`.
 
 ## One-line state
 
-Contracts, fixtures, versioning and the assumptions ledger are written. Gate 0 acceptance
-(validate, test, lint, tag) is in progress. Builder is assigned POWER ingest; Lead is finishing
-the spine and the API on fixtures.
+Gate 0 is tagged and green. Fixture API, bilingual web app, B-01 caches, B-02 replay and the
+L-04 Council core are built. B-03 economics is active; Scout hardware samples and human visual
+and native-Arabic review remain. Repo-wide ruff is waiting on two Builder lint fixes.
 
 ## Agents
 
 | Agent | Current task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-03` web app and lenses | `IN_PROGRESS` | L-02 real-engine swap after B-02 |
-| Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
+| Lead (L) | `L-04` content, Council and Number Auditor | `REVIEW` | Human Arabic review; L-05 after B-02/B-03/B-04 |
+| Builder (B) | `B-03` economics, barcode and ranking | `IN_PROGRESS` | B-04 fusion after acceptance |
 
 ## Gate checklist
 
@@ -54,13 +54,26 @@ the spine and the API on fixtures.
 | Command | Result | When |
 | --- | --- | --- |
 | `python -m contracts.validate --all` | 7/7 fixtures valid | 2026-11-14 |
-| `python -m pytest` | 87 passed | 2026-11-14 |
+| `python -m pytest` | 151 passed | 2026-11-14 |
 | `python -m pytest tests/api` | 20 passed | 2026-11-14 |
-| `python -m ruff check .` | all checks passed | 2026-11-14 |
+| `python -m pytest tests/ingest` | 36 passed | 2026-11-14 |
+| `python -m pytest tests/engine` | 28 passed | 2026-11-14 |
+| `python -m pytest tests/econ` | 17 passed | 2026-11-14 |
+| `python -m pytest tests/council` | 41 passed | 2026-11-14 |
+| `python -m pytest` | 210 passed | 2026-11-14 |
+| `python -m ruff check .` | 1 Builder-owned error remains (see MSG-0014) | 2026-11-14 |
+| `npm --prefix web run build` | static `/` built, TypeScript clean | 2026-11-14 |
+| Headless Chrome, 360 px | Arabic RTL + English LTR, no overflow, 0 console errors | 2026-11-14 |
 
 ## Known gaps
 
 - `api/` serves contract-valid fixtures; the real-engine swap waits on B-02.
-- `web/` is empty; `L-03` starts against the fixture API.
-- `content/` and `council/` are empty; `L-04` owns them.
+- `web/` is built and falls back to the bundled fixture when the API is offline. Visual
+  greyscale and native Arabic review are still open human jobs.
+- `/demo` still supports only `delta_01`; `matruh_01` and `sevilla_01` show `Cache pending`.
+- `content/` and `council/` are built but not yet wired into the API or web; the `web/` Field
+  Card remains its own client-side component until L-06 integration.
+- Native Arabic review and the Field Card's human print check are still open.
+- Repo-wide ruff has one remaining Builder-owned error: an unused import in
+  `tests/econ/test_econ.py`.
 - `qa/REPORT.md` does not exist yet; nothing may be presented as a validated result.

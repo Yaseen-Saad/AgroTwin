@@ -14,6 +14,15 @@ project uses Semantic Versioning. `VERSION` is the single source of truth.
   and field card; every result is contract-validated and mode-tagged.
 - Public `validate_document` for in-memory contract checks; API tests cover auth-before-body,
   duplicate runs, calibration minimums, schema validity and the 3-second demo budget.
+- Bilingual Next.js 16 web app in `web/`: schematic site map, Harvest Barcode, diagnosis
+  timeline, rotation cards with evidence/benefits/gaps/review flags, priority mixer, scenario
+  sliders, Scout band narrowing, tappable source chips, mode badges, Farmer/Investor/Scientist
+  lenses, Arabic RTL and English, and a bundled-fixture fallback that works without the API.
+- Council core in `council/`: three constrained advisors with fixed-template fallback, a
+  Number Auditor that blocks promises, undeclared numbers, unit mismatches and undeclared
+  sources, and an audited Field Card with a local `segno` QR and bilingual print HTML.
+- Bilingual `content/` library: glossary, ten blind spots, labels and advisor/Field Card
+  templates. Arabic entries carry `needs_native_review: true`.
 
 ### Fixed
 
@@ -23,6 +32,10 @@ project uses Semantic Versioning. `VERSION` is the single source of truth.
 
 - `api/` serves illustrative fixtures; the real engine swap waits on B-02.
 - `/demo` supports only `delta_01` until the other caches and results exist.
+- `web/` is labelled illustrative; its visual greyscale check and native Arabic review remain
+  human jobs before Gate 3.
+- The Council and Field Card core are not yet exposed through `api/` or `web/`; integration is
+  scheduled for L-06. Arabic content is machine-written and awaits native review.
 
 ## [0.1.0] — 2026-11-14
 

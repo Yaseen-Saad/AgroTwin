@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "agent-L / opencode/big-pickle / 2026-11-14",
+  "needs_native_review": true,
+  "terms": [
+    {
+      "id": "et0",
+      "en": "Reference evapotranspiration (ET0)",
+      "ar": "النتح المرجعي (ET0)",
+      "definition_en": "Water lost by a reference grass crop under the site's weather; the base of the FAO-56 water balance.",
+      "definition_ar": "الماء المفقود من محصول عشبي مرجعي تحت طقس الموقع؛ أساس حساب توازن الماء في FAO-56.",
+      "needs_native_review": true
+    },
+    {
+      "id": "water_balance",
+      "en": "Daily water balance",
+      "ar": "توازن الماء اليومي",
+      "definition_en": "A day-by-day account of rain, irrigation, crop water use, runoff and drainage in the root zone.",
+      "definition_ar": "حساب يومي للمطر والري واستهلاك المحصول للماء والجريان والصرف في منطقة الجذور.",
+      "needs_native_review": true
+    },
+    {
+      "id": "taw",
+      "en": "Total available water (TAW)",
+      "ar": "الماء المتاح الكلي (TAW)",
+      "definition_en": "The water a soil can hold between field capacity and the wilting point for the crop's root depth.",
+      "definition_ar": "الماء الذي يحتفظ به التربة بين السعة الحقلية ونقطة الذبول لعمق جذور المحصول.",
+      "needs_native_review": true
+    },
+    {
+      "id": "raw",
+      "en": "Readily available water (RAW)",
+      "ar": "الماء المتاح بسهولة (RAW)",
+      "definition_en": "The share of TAW the crop can use before water stress begins.",
+      "definition_ar": "حصة الماء المتاح الكلي التي يستطيع المحصول استخدامها قبل بدء إجهاد الماء.",
+      "needs_native_review": true
+    },
+    {
+      "id": "ks",
+      "en": "Water-stress coefficient (Ks)",
+      "ar": "معامل إجهاد الماء (Ks)",
+      "definition_en": "A multiplier below one when root-zone water falls under the readily available threshold.",
+      "definition_ar": "معامل أقل من واحد عندما ينخفض ماء منطقة الجذور تحت حد الماء المتاح بسهولة.",
+      "needs_native_review": true
+    },
+    {
+      "id": "deficit_days",
+      "en": "Deficit days",
+      "ar": "أيام العجز المائي",
+      "definition_en": "Days in a replayed year when the crop's water demand is not fully met.",
+      "definition_ar": "الأيام في السنة المعادة التي لا يُلبّى فيها طلب المحصول للماء بالكامل.",
+      "needs_native_review": true
+    },
+    {
+      "id": "runoff_curve_number",
+      "en": "Runoff curve number",
+      "ar": "رقم منحنى الجريان",
+      "definition_en": "A soil-cover parameter used to estimate how much rain becomes surface runoff.",
+      "definition_ar": "معامل للتربة والغطاء يُستخدم لتقدير كمية المطر التي تتحول إلى جريان سطحي.",
+      "needs_native_review": true
+    },
+    {
+      "id": "rotation",
+      "en": "Crop rotation",
+      "ar": "الدورة الزراعية",
+      "definition_en": "An ordered sequence of crops grown on the same field across seasons or years.",
+      "definition_ar": "تتابع منظم من المحاصيل يُزرع في الحقل نفسه عبر المواسم أو السنوات.",
+      "needs_native_review": true
+    },
+    {
+      "id": "fallow",
+      "en": "Fallow",
+      "ar": "الأرض البور",
+      "definition_en": "A season with no crop, used here to estimate bare-soil and erosion exposure.",
+      "definition_ar": "موسم بلا محصول، يُستخدم هنا لتقدير تعرّض التربة المكشوفة والتعرية.",
+      "needs_native_review": true
+    },
+    {
+      "id": "legume_credit",
+      "en": "Legume nitrogen credit",
+      "ar": "رصيد النيتروجين البقولي",
+      "definition_en": "A cited range for nitrogen that a legume may add; it is an assumption, not a field measurement.",
+      "definition_ar": "نطاق موثّق للنيتروجين الذي قد تضيفه البقوليات؛ وهو افتراض وليس قياساً حقلياً.",
+      "needs_native_review": true
+    },
+    {
+      "id": "erosion_index",
+      "en": "Erosion exposure index",
+      "ar": "مؤشر تعرّض التربة للتعرية",
+      "definition_en": "A relative index for how exposed the soil is during the replayed rotation; it is not a measured soil-loss rate.",
+      "definition_ar": "مؤشر نسبي لمدى تعرّض التربة خلال الدورة المعادة؛ وليس معدل فقد تربة مقاساً.",
+      "needs_native_review": true
+    },
+    {
+      "id": "percentile",
+      "en": "Percentile",
+      "ar": "المئين",
+      "definition_en": "A value below which a chosen share of replayed years falls; the p10 and p90 form the displayed band.",
+      "definition_ar": "قيمة تقع تحتها نسبة مختارة من السنوات المعادة؛ ويشكل المئينان p10 وp90 النطاق المعروض.",
+      "needs_native_review": true
+    },
+    {
+      "id": "range_not_forecast",
+      "en": "Range, not a forecast",
+      "ar": "نطاق وليس تنبؤاً",
+      "definition_en": "The band describes replayed history. It is not a prediction of the next season.",
+      "definition_ar": "النطاق يصف تاريخاً معاداً، وليس تنبؤاً للموسم القادم.",
+      "needs_native_review": true
+    },
+    {
+      "id": "effective_sample_size",
+      "en": "Effective sample size (ESS)",
+      "ar": "الحجم الفعّال للعينة (ESS)",
+      "definition_en": "A measure of how much independent information the weighted historical years carry after Scout fusion.",
+      "definition_ar": "مقياس لكمية المعلومات المستقلة التي تحملها السنوات التاريخية الموزونة بعد دمج المسح.",
+      "needs_native_review": true
+    },
+    {
+      "id": "source_tag",
+      "en": "Source tag",
+      "ar": "وسم المصدر",
+      "definition_en": "The origin attached to a number: NASA product, computed, Scout run, quoted link or named assumption.",
+      "definition_ar": "أصل الرقم المرفق به: منتج ناسا، أو محسوب، أو مسح ميداني، أو رابط مقتبس، أو افتراض مسمى.",
+      "needs_native_review": true
+    },
+    {
+      "id": "harvest_barcode",
+      "en": "Harvest Barcode",
+      "ar": "باركود الحصاد",
+      "definition_en": "One stripe per replayed year, coloured by the profit class; readable in greyscale by pattern and letter.",
+      "definition_ar": "شريط لكل سنة معادة، ملوّن حسب فئة الربح؛ يُقرأ بوضوح في التدرج الرمادي بالنمط والحرف.",
+      "needs_native_review": true
+    },
+    {
+      "id": "mode",
+      "en": "Data mode",
+      "ar": "وضع البيانات",
+      "definition_en": "LIVE, REPLAY, SIMULATED or NONE; every screen and card must show which mode it uses.",
+      "definition_ar": "مباشر أو إعادة أو محاكاة أو بدون؛ يجب أن تعرض كل شاشة وبطاقة الوضع المستخدم.",
+      "needs_native_review": true
+    },
+    {
+      "id": "feddan",
+      "en": "Feddan",
+      "ar": "الفدان",
+      "definition_en": "A local area unit equal to 0.42 hectares; the Farmer lens shows per-feddan values.",
+      "definition_ar": "وحدة مساحة محلية تساوي 0.42 هكتار؛ وتعرض عدسة المزارع القيم لكل فدان.",
+      "needs_native_review": true
+    },
+    {
+      "id": "blind_spot",
+      "en": "Blind spot",
+      "ar": "نقطة عمياء",
+      "definition_en": "A field condition that satellites and the replay cannot observe, such as salinity or nematode load.",
+      "definition_ar": "حالة حقلية لا تستطيع الأقمار الصناعية أو الإعادة رصدها، مثل الملوحة أو كثافة النيماتودا.",
+      "needs_native_review": true
+    },
+    {
+      "id": "local_review",
+      "en": "Local review",
+      "ar": "المراجعة المحلية",
+      "definition_en": "A question the farmer or a local agronomist must answer before relying on a rotation suggestion.",
+      "definition_ar": "سؤال يجب أن يجيب عنه المزارع أو مهندس زراعي محلي قبل الاعتماد على اقتراح الدورة.",
+      "needs_native_review": true
+    }
+  ]
+}

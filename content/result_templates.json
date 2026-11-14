@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "agent-L / opencode/big-pickle / 2026-11-14",
+  "needs_native_review": true,
+  "lens_openings": {
+    "farmer": {
+      "en": "For the field decision:",
+      "ar": "لقرار الحقل:"
+    },
+    "investor": {
+      "en": "For the range of outcomes:",
+      "ar": "لنطاق النتائج:"
+    },
+    "scientist": {
+      "en": "What the replay supports:",
+      "ar": "ما تدعمه الإعادة:"
+    }
+  },
+  "advisors": {
+    "agronomist": {
+      "en": "The replay puts {rotation} at {w10} to {w90} mm/yr water use and {def10} to {def90} deficit days. The legume nitrogen credit is {n_low} to {n_high} kg N/ha [{n_source}]. [computed]",
+      "ar": "تعيد الإعادة {rotation} باستهلاك ماء من {w10} إلى {w90} مم/سنة، وعجز من {def10} إلى {def90} يوماً. رصيد النيتروجين البقولي من {n_low} إلى {n_high} كغ ن/هكتار [{n_source}]. [computed]"
+    },
+    "economist": {
+      "en": "Profit ranges from {p10} to {p90} {currency}/ha, with a median of {median} {currency}/ha. Loss years are {loss_pct}% of the replay. [computed]",
+      "ar": "الربح من {p10} إلى {p90} {currency}/هكتار، والوسيط {median} {currency}/هكتار. سنوات الخسارة {loss_pct}% من الإعادة. [computed]"
+    },
+    "scientist": {
+      "en": "The replay covers {years} years. Scout fusion has an effective sample size of {ess} and narrows the band from {without} to {with} {band_unit}. [computed]",
+      "ar": "تغطي الإعادة {years} سنوات. دمج المسح له حجم فعّال {ess}، ويضيّق النطاق من {without} إلى {with} {band_unit_ar}. [computed]"
+    },
+    "scientist_no_scout": {
+      "en": "The replay covers {years} years. No Scout fusion is used, so the band stays at {without} {band_unit}. [computed]",
+      "ar": "تغطي الإعادة {years} سنوات. لا يُستخدم دمج المسح، لذلك يبقى النطاق عند {without} {band_unit_ar}. [computed]"
+    }
+  },
+  "fieldcard": {
+    "en": {
+      "title": "AgroTwin | {site} | {mode}",
+      "top": "Top replayed rotation: {rotation}. Profit median {median} {currency}/ha; range {p10} to {p90}. [computed]",
+      "water": "Water use {w10} to {w90} mm/yr. [computed]",
+      "worst": "Worst replayed year {year}: {profit} {currency}/ha. [computed]",
+      "scout": "Scout: {points} points; ESS {ess}; band {with} vs {without} {band_unit}. [computed]",
+      "blind": "Local review still needed: {blindspots}.",
+      "note": "Ranges are not a forecast. Illustrative fixture. [computed]"
+    },
+    "ar": {
+      "title": "AgroTwin | {site} | {mode}",
+      "top": "الدورة الأعلى في الإعادة: {rotation}. وسيط الربح {median} {currency}/هكتار؛ النطاق من {p10} إلى {p90}. [computed]",
+      "water": "استهلاك الماء من {w10} إلى {w90} مم/سنة. [computed]",
+      "worst": "أسوأ سنة معادة {year}: {profit} {currency}/هكتار. [computed]",
+      "scout": "المسح: {points} نقطة؛ الحجم الفعّال {ess}؛ النطاق {with} مقابل {without} {band_unit_ar}. [computed]",
+      "blind": "ما زالت المراجعة المحلية مطلوبة: {blindspots}.",
+      "note": "النطاقات ليست تنبؤاً. بيانات توضيحية. [computed]"
+    }
+  }
+}

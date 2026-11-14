@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "locale": "en",
+    "needs_native_review": false,
+    "note": "English UI copy. Every number is rendered from the result contract, never hard-coded."
+  },
+  "app": {
+    "title": "AgroTwin",
+    "tagline": "From the sky to the land",
+    "subtitle": "Replay the weather this field actually lived through, compare three rotations, and see what satellites still cannot tell you.",
+    "site": "Demo field",
+    "modeLabel": "Mode",
+    "sourceLabel": "Source",
+    "apiConnected": "API connected",
+    "apiOffline": "API offline — bundled fixture",
+    "loading": "Loading the fixture…",
+    "retry": "Retry",
+    "fixture": "Illustrative fixture",
+    "years": "historical years",
+    "rotations": "rotations"
+  },
+  "language": {
+    "label": "Language",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "mode": {
+    "labels": {
+      "LIVE": "LIVE",
+      "REPLAY": "REPLAY",
+      "SIMULATED": "SIMULATED",
+      "NONE": "NONE"
+    },
+    "notes": {
+      "LIVE": "The robot is posting now.",
+      "REPLAY": "A saved real run, played back.",
+      "SIMULATED": "Generated readings. Disclosed, never presented as live.",
+      "NONE": "No Scout data is used in this result."
+    }
+  },
+  "lens": {
+    "title": "Lens",
+    "farmer": "Farmer",
+    "investor": "Investor",
+    "scientist": "Scientist",
+    "farmerDesc": "Feddan, water and the next practical question.",
+    "investorDesc": "Profit range, loss years and the size of the band.",
+    "scientistDesc": "Fusion weights, effective sample size and limits."
+  },
+  "map": {
+    "title": "Three fields, three climates",
+    "note": "Schematic site map, not a georeferenced basemap. No tiles and no NASA imagery are bundled.",
+    "active": "Fixture ready",
+    "pending": "Cache pending",
+    "sea": "Mediterranean",
+    "selected": "Selected",
+    "selectedNote": "Only delta_01 has a contract-valid fixture result. The other two caches stay pending and are not simulated.",
+    "delta": "Mansoura, Nile Delta",
+    "matruh": "Marsa Matruh hinterland",
+    "seville": "Seville, Spain"
+  },
+  "barcode": {
+    "title": "Harvest Barcode",
+    "subtitle": "One stripe per historical year. Height is not a forecast; colour and letter carry the class.",
+    "legend": {
+      "green": "Green: profit above the amber band",
+      "amber": "Amber: small positive margin",
+      "red": "Red: loss year"
+    },
+    "worst": "Worst year",
+    "aria": "Harvest barcode for this rotation"
+  },
+  "timeline": {
+    "title": "Diagnosis timeline",
+    "subtitle": "The same replay ordered by year. The dashed year is the lowest profit, not a prediction.",
+    "aria": "Year-by-year diagnosis timeline"
+  },
+  "source": {
+    "nasa": "NASA product; not a field measurement.",
+    "computed": "Computed by the AgroTwin engine from the inputs shown.",
+    "scout": "A Verdex Scout run; read its mode badge.",
+    "quoted": "Quoted external source.",
+    "assumption": "Editable assumption in engine/config/assumptions.yaml.",
+    "other": "Source tag supplied by the result."
+  },
+  "metrics": {
+    "water": "Water use",
+    "deficit": "Deficit days",
+    "bare": "Bare days",
+    "erosion": "Erosion index",
+    "nCredit": "Nitrogen credit",
+    "profit": "Profit",
+    "lossShare": "Loss-year share",
+    "worstYear": "Worst year",
+    "range": "range",
+    "median": "median",
+    "perHa": "per ha",
+    "perFeddan": "per feddan",
+    "mmPerYear": "mm/yr",
+    "daysPerYear": "days/yr",
+    "kgPerHa": "kg N/ha",
+    "egpPerHa": "EGP/ha",
+    "egpPerFeddan": "EGP/feddan"
+  },
+  "rotations": {
+    "title": "Three rotations, shown as ranges",
+    "subtitle": "Evidence, benefits, gaps and review flags travel with every card. A range is not a promise.",
+    "evidence": "Evidence",
+    "benefits": "Benefits",
+    "gaps": "Gaps",
+    "flags": "Ask before committing",
+    "excluded": "Excluded by a hard constraint",
+    "worst": "Worst year",
+    "creditNote": "A cited range, not a field measurement.",
+    "lossShare": "of historical years lost money"
+  },
+  "mixer": {
+    "title": "Priority mixer",
+    "subtitle": "Move the weights to see a transparent client-side ordering. The server ranking stays authoritative.",
+    "water": "Water",
+    "soil": "Soil",
+    "profit": "Profit",
+    "order": "Preview order",
+    "preview": "Client-side preview only.",
+    "reset": "Reset",
+    "noWinner": "No clear winner: the top two are inside the tie band."
+  },
+  "scenario": {
+    "title": "Scenario sliders",
+    "subtitle": "Ask the API for a scenario. The fixture echoes the inputs; the engine replay is pending.",
+    "rain": "Rain multiplier",
+    "temp": "Temperature offset",
+    "price": "Price multiplier",
+    "apply": "Ask the API",
+    "applying": "Asking…",
+    "fixtureNote": "These ranges remain the illustrative fixture until the replay engine is connected.",
+    "failed": "The API did not answer. The bundled fixture is unchanged."
+  },
+  "scout": {
+    "title": "Verdex Scout",
+    "used": "Scout data re-weights the historical years",
+    "notUsed": "No Scout data in this result",
+    "points": "readings",
+    "ess": "Effective sample size",
+    "sigma": "Sensor error used",
+    "confidence": "Confidence",
+    "band": "Band width",
+    "without": "Without Scout",
+    "with": "With Scout",
+    "narrowing": "narrower",
+    "runs": "Runs",
+    "sightings": "Sightings",
+    "healthy": "healthy",
+    "diseased": "diseased",
+    "unknown": "unknown",
+    "observation": "Sightings are observations, not diagnoses.",
+    "noData": "Post a Scout run to narrow the band. Until then, the range is unchanged.",
+    "confidenceLow": "low",
+    "confidenceMedium": "medium",
+    "confidenceHigh": "high",
+    "bias": "Bias check",
+    "overlapDays": "overlap days",
+    "applied": "applied",
+    "notApplied": "not applied"
+  },
+  "fieldcard": {
+    "title": "Field Card",
+    "copy": "Copy for WhatsApp",
+    "copied": "Copied",
+    "print": "Print",
+    "note": "The message is under 600 characters, carries the mode and avoids promises.",
+    "messageTitle": "AgroTwin · {site} · {mode}",
+    "messageProfit": "{rotation}: {p10}–{p90} {currency}/ha, median {median}; water {w10}–{w90} mm/yr.",
+    "messageWorst": "Worst year {year}: {profit}.",
+    "messageScout": "Scout: {points} readings, ESS {ess}, band {with} vs {without} mm.",
+    "messageNote": "Ranges are not a forecast. Illustrative fixture."
+  },
+  "lensPanel": {
+    "farmerTitle": "What this means per feddan",
+    "investorTitle": "What moves the range",
+    "scientistTitle": "What the evidence can support",
+    "nextSteps": "Ask about",
+    "perFeddanNote": "Derived at 0.42 ha per feddan from the per-hectare fixture values.",
+    "essNote": "Effective sample size below 5 widens the sensor error instead of pretending certainty.",
+    "weightsNote": "Historical-year weights are shown only when Scout fusion is used.",
+    "authoritative": "The server ranking is authoritative; the mixer is a preview.",
+    "worstYear": "The lowest profit year in the historical replay."
+  },
+  "footer": {
+    "disclaimer": "Illustrative fixture. Not a site result, not a forecast and not a promise of yield, water saving or revenue.",
+    "sources": "Every number carries a source tag: NASA product, computed, Scout run, quoted source or editable assumption.",
+    "built": "Built with NASA POWER-shaped fixtures for NASA Space Apps 2026. No NASA logos, flags or mission insignia are used.",
+    "ai": "AI-assisted under human review. See docs/AI_USE.md in the repository."
+  },
+  "common": {
+    "range": "range",
+    "median": "median",
+    "year": "year",
+    "years": "years",
+    "worst": "worst",
+    "source": "source",
+    "close": "Close",
+    "mode": "mode"
+  }
+}

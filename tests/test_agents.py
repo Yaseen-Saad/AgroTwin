@@ -57,11 +57,24 @@ def test_board_has_every_task_card() -> None:
 
 def test_one_active_task_per_agent() -> None:
     board = _read("TASKS.md")
-    assert board.count("`IN_PROGRESS`") >= 1
-    lead_block = board.split("### L-03", 1)[1].split("### L-04", 1)[0]
-    builder_block = board.split("### B-01", 1)[1].split("### B-02", 1)[0]
-    assert "**Status:** `IN_PROGRESS`" in lead_block
-    assert "**Status:** `ASSIGNED`" in builder_block
+    statuses = {
+        match.group(1): match.group(2)
+        for match in re.finditer(
+            r"^### ([BL]-\d{2})[^\n]*\n\n\*\*Status:\*\* `([A-Z_]+)`",
+            board,
+            re.MULTILINE,
+        )
+    }
+    assert statuses, "no task cards parsed"
+    assert statuses["B-03"] == "IN_PROGRESS"
+    assert statuses["L-04"] == "REVIEW"
+    for prefix in ("L-", "B-"):
+        active = [
+            task
+            for task, status in statuses.items()
+            if task.startswith(prefix) and status == "IN_PROGRESS"
+        ]
+        assert len(active) <= 1, f"{prefix} agents have more than one active task: {active}"
 
 
 def test_messages_are_append_only_and_well_formed() -> None:
@@ -89,8 +102,8 @@ def test_status_names_both_agents_and_current_tasks() -> None:
     status = _read("STATUS.md")
     assert "Lead (L)" in status
     assert "Builder (B)" in status
-    assert "`L-03`" in status
-    assert "`B-01`" in status
+    assert "`L-04`" in status
+    assert "`B-03`" in status
 
 
 def test_bootstrap_prompt_is_executable() -> None:

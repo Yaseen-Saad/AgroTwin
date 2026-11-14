@@ -1,6 +1,6 @@
 # Live Task Board
 
-> Last updated: 2026-11-14 12:10 Cairo · Gate 0 · Version 0.1.0
+> Last updated: 2026-11-14 · Gate 0 passed · Version 0.1.0
 > Board owner: **Agent L**. Status changes are made by the Lead after evidence is reviewed.
 > One `IN_PROGRESS` task per agent. P0 before P1; anything not green is cut, not extended.
 
@@ -8,21 +8,21 @@
 
 | Track | Active task | Status | Next |
 | --- | --- | --- | --- |
-| Lead (L) | `L-03` web app and lenses | `IN_PROGRESS` | L-02 real-engine swap after B-02 |
-| Builder (B) | `B-01` POWER ingest and 3 caches | `ASSIGNED` | `B-02` water balance and replay |
+| Lead (L) | `L-04` content, Council and Number Auditor | `REVIEW` | Human Arabic review; L-05 after B-02/B-03/B-04 |
+| Builder (B) | `B-03` economics, barcode and ranking | `IN_PROGRESS` | B-04 fusion after B-03 acceptance |
 
 ## Board
 
 | ID | Owner | Wave | Pri | Task | Depends on | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | L-01 | L | 0 | P0 | Gate 0 spine, version, tests, tags | — | `DONE` |
-| B-01 | B | 0 | P0 | POWER ingest, 3 site caches, fallback | L-01 contracts | `ASSIGNED` |
+| B-01 | B | 0 | P0 | POWER ingest, 3 site caches, fallback | L-01 contracts | `DONE` (Lead accepted 36/36 ingest tests) |
 | L-02 | L | 1 | P0 | API endpoints on fixtures, then real engine | L-01, B-02 | `REVIEW` (fixtures green; real-engine swap after B-02) |
-| L-03 | L | 1 | P0 | Web app: map, barcode, mixer, sliders, lenses | L-01, L-02 fixtures | `IN_PROGRESS` |
-| B-02 | B | 1 | P0 | FAO-56 water balance, replay, danger windows | L-01, B-01 | `TODO` |
-| B-03 | B | 2 | P0 | Economics, barcode class, ranking, prices | B-02 | `TODO` |
+| L-03 | L | 1 | P0 | Web app: map, barcode, mixer, sliders, lenses | L-01, L-02 fixtures | `REVIEW` (build + automated 360 checks green; visual greyscale/native Arabic pending) |
+| B-02 | B | 1 | P0 | FAO-56 water balance, replay, danger windows | L-01, B-01 | `REVIEW` (28 engine tests green; agronomist coefficient sign-off pending) |
+| B-03 | B | 2 | P0 | Economics, barcode class, ranking, prices | B-02 | `IN_PROGRESS` (17 econ tests green; one unused import remains) |
 | B-04 | B | 2 | P0 | Fusion, bias check, twin experiment | B-02 | `TODO` |
-| L-04 | L | 2 | P0 | Glossary, blind spots, templates, Number Auditor | L-02 shape | `TODO` |
+| L-04 | L | 2 | P0 | Glossary, blind spots, templates, Number Auditor | L-02 shape | `REVIEW` (41 council tests green; native Arabic review pending) |
 | B-05 | B | 3 | P0 | Scout simulator, calibration, bridge, replay, ESP32 | L-01 contracts | `TODO` |
 | L-05 | L | 3 | P0 | QA harness, provenance audit, validation wall | B-02, B-03, B-04 | `TODO` |
 | L-06 | L | 3 | P0 | Integration, demo rehearsal, release tags | all P0 | `TODO` |
@@ -99,7 +99,13 @@ python -m pytest tests/api
 
 ### L-03 · Frontend and lenses
 
-**Status:** `IN_PROGRESS` · **Wave:** 1 · **Priority:** P0
+**Status:** `REVIEW` · **Wave:** 1 · **Priority:** P0
+
+**Evidence.** `npm --prefix web run build` → compiled, TypeScript clean, static `/` generated.
+Headless Chrome at 360 px: no horizontal overflow (`scrollWidth = 360`), Arabic RTL and English
+LTR both render, 3 rotation cards, 8 timeline nodes, 8 barcode bars, 49 source chips, 3 lenses,
+source-chip popovers, map selection and scenario POST all work with zero console errors. Static
+fallback works with the API stopped. Visual greyscale and native Arabic review remain human jobs.
 
 **Goal.** Next.js app built against fixtures: pin drop, diagnosis timeline, Harvest Barcode,
 three rotation cards with evidence/benefits/gaps/review flags, priority mixer, scenario sliders,
@@ -126,7 +132,12 @@ npm --prefix web run build
 
 ### L-04 · Content, Council and Number Auditor
 
-**Status:** `TODO` · **Wave:** 2 · **Priority:** P0
+**Status:** `REVIEW` · **Wave:** 2 · **Priority:** P0
+
+**Evidence.** `python -m pytest tests/council` → 41 passed. Ten seeded bad claims are blocked and
+ten good claims pass; all three advisors fall back on provider/audit failure; the Field Card is
+431 characters in English and 445 in Arabic; the QR is generated locally via `segno`; the print
+card carries mode, ranges, blind spots and the caveat. Native Arabic review remains open.
 
 **Goal.** Bilingual glossary, blind-spot library, result templates, Field Card (print + WhatsApp
 < 600 chars + local QR), three advisors with fixed-template fallback and a Number Auditor that
@@ -221,7 +232,11 @@ project page text, AI-use disclosure, and the prior-work declaration for Verdex.
 
 ### B-01 · POWER ingest and three site caches
 
-**Status:** `ASSIGNED` · **Wave:** 0 · **Priority:** P0
+**Status:** `DONE` · **Wave:** 0 · **Priority:** P0
+
+**Lead acceptance.** `python -m pytest tests/ingest` → 36 passed. Three caches exist for
+`delta_01`, `matruh_01` and `sevilla_01`; AppEEARS fields stay `null` without Earthdata
+credentials. Accepted into the board before B-02 continues.
 
 **Goal.** Build `ingest/power.py` (daily point API, exact parameter catalogue lookup, fill-value
 handling), `ingest/build_cache.py`, `ingest/serve.py` (cache-first, 3 s live timeout, fallback)
@@ -248,7 +263,11 @@ python -m pytest tests/ingest; python -m contracts.validate --all
 
 ### B-02 · Water balance, replay and danger windows
 
-**Status:** `TODO` · **Wave:** 1 · **Priority:** P0
+**Status:** `REVIEW` · **Wave:** 1 · **Priority:** P0
+
+**Lead check.** `python -m pytest tests/engine` → 28 passed; replay schema-valid; 3 rotations ×
+33 windows in 1.204 s cold. Coefficient verification note is in MSG-0013; agronomist sign-off
+and danger-window wording remain open.
 
 **Goal.** Implement `engine/waterbalance.py`, `engine/replay.py` and `engine/danger.py` exactly
 to Agent guide §5.1, §5.2 and §5.6, using `engine/et0.py`, `engine/crops.yaml` and
@@ -276,7 +295,11 @@ python -m pytest tests/engine
 
 ### B-03 · Economics, barcode and ranking
 
-**Status:** `TODO` · **Wave:** 2 · **Priority:** P0
+**Status:** `IN_PROGRESS` · **Wave:** 2 · **Priority:** P0
+
+**Lead check.** `python -m pytest tests/econ` → 17 passed after the Builder's latest edit.
+The `engine/econ.py` long line is fixed; one unused import remains in
+`tests/econ/test_econ.py` and is tracked in MSG-0014.
 
 **Goal.** Implement `engine/econ.py` and `engine/rank.py`; fill `data/prices.csv` for every
 candidate crop with a source URL or an `assumption:<id>` and a year. Profit per hectare per

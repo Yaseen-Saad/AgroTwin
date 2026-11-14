@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "generated_by": "agent-L / opencode/big-pickle / 2026-11-14",
+  "needs_native_review": true,
+  "blindspots": [
+    {
+      "id": "salinity",
+      "severity": "high",
+      "title_en": "Salinity build-up",
+      "title_ar": "تراكم الملوحة",
+      "body_en": "The replay does not model salt accumulation from irrigation water or a shallow water table.",
+      "body_ar": "لا تحاكي الإعادة تراكم الأملاح من ماء الري أو من مستوى ماء أرضي ضحل.",
+      "review_action_en": "Ask for an electrical-conductivity test of the field soil and irrigation water.",
+      "review_action_ar": "اطلب تحليل التوصيل الكهربائي لتربة الحقل وماء الري.",
+      "needs_native_review": true
+    },
+    {
+      "id": "soil_ph",
+      "severity": "high",
+      "title_en": "Soil pH and lime",
+      "title_ar": "حموضة التربة والجير",
+      "body_en": "Satellites do not see subsurface pH, so a crop that tolerates the weather may still fail on this field.",
+      "body_ar": "لا ترى الأقمار الصناعية حموضة التربة تحت السطح؛ وقد ينجح محصول في الطقس ويفشل في هذا الحقل.",
+      "review_action_en": "Use a soil test to confirm pH and lime requirement before changing the rotation.",
+      "review_action_ar": "استخدم تحليل تربة لتأكيد الحموضة واحتياج الجير قبل تغيير الدورة.",
+      "needs_native_review": true
+    },
+    {
+      "id": "nematodes",
+      "severity": "high",
+      "title_en": "Nematode pressure",
+      "title_ar": "ضغط النيماتودا",
+      "body_en": "Nematode load is a field history that no satellite series in this replay observes.",
+      "body_ar": "كثافة النيماتودا تاريخ حقلي لا ترصده أي سلسلة أقمار صناعية في هذه الإعادة.",
+      "review_action_en": "Check the field's nematode history and ask for a soil sample if faba bean is considered.",
+      "review_action_ar": "راجع تاريخ النيماتودا في الحقل واطلب عينة تربة إذا كانت الفول مطروحاً.",
+      "needs_native_review": true
+    },
+    {
+      "id": "compaction",
+      "severity": "medium",
+      "title_en": "Compaction and hardpan",
+      "title_ar": "الانضغاط والطبقة الصلبة",
+      "body_en": "A compacted layer can change rooting depth and water use without appearing in the weather replay.",
+      "body_ar": "قد تغيّر الطبقة المنضغطة عمق الجذور واستهلاك الماء دون أن تظهر في إعادة الطقس.",
+      "review_action_en": "Ask whether the field has a hardpan or a recent deep-ripping history.",
+      "review_action_ar": "اسأل إن كانت في الحقل طبقة صلبة أو تاريخ حديث من التشقيل العميق.",
+      "needs_native_review": true
+    },
+    {
+      "id": "micronutrients",
+      "severity": "medium",
+      "title_en": "Micronutrients",
+      "title_ar": "العناصر الصغرى",
+      "body_en": "The replay tracks water and a nitrogen-credit assumption, not iron, zinc or boron status.",
+      "body_ar": "تتابع الإعادة الماء وافتراض رصيد النيتروجين، لا حالة الحديد أو الزنك أو البورون.",
+      "review_action_en": "Use a complete soil test if the chosen crop is sensitive to a micronutrient.",
+      "review_action_ar": "استخدم تحليل تربة شاملاً إذا كان المحصول المختار حساساً لعنصر صغرى.",
+      "needs_native_review": true
+    },
+    {
+      "id": "water_rights",
+      "severity": "high",
+      "title_en": "Water rights and delivery",
+      "title_ar": "حقوق الماء وتوصيله",
+      "body_en": "The replay can assume irrigation, but it cannot see a canal schedule, a pump limit or a legal right.",
+      "body_ar": "قد تفترض الإعادة الري، لكنها لا ترى جدول الترعة أو حد المضخة أو الحق القانوني.",
+      "review_action_en": "Confirm the water right, delivery schedule and pump capacity with the farmer.",
+      "review_action_ar": "أكّد حق الماء وجدول التوصيل وقدرة المضخة مع المزارع.",
+      "needs_native_review": true
+    },
+    {
+      "id": "input_availability",
+      "severity": "medium",
+      "title_en": "Local input availability",
+      "title_ar": "توافر المدخلات محلياً",
+      "body_en": "Seed, fertilizer and spare parts may be unavailable even when the modelled rotation looks better.",
+      "body_ar": "قد لا تتوفر البذور أو السماد أو قطع الغيار حتى عندما تبدو الدورة المحاكاة أفضل.",
+      "review_action_en": "Check local seed and input availability before committing to a new crop.",
+      "review_action_ar": "تحقق من توافر البذور والمدخلات محلياً قبل الالتزام بمحصول جديد.",
+      "needs_native_review": true
+    },
+    {
+      "id": "market_access",
+      "severity": "high",
+      "title_en": "Market access",
+      "title_ar": "الوصول إلى السوق",
+      "body_en": "A profit range assumes a buyer and a price path that may not exist for this field.",
+      "body_ar": "يفترض نطاق الربح وجود مشترٍ ومسار سعر قد لا يتوفران لهذا الحقل.",
+      "review_action_en": "Confirm a buyer and a local price before choosing a rotation on profit alone.",
+      "review_action_ar": "أكّد وجود مشترٍ وسعر محلي قبل اختيار الدورة على أساس الربح وحده.",
+      "needs_native_review": true
+    },
+    {
+      "id": "labor",
+      "severity": "medium",
+      "title_en": "Labour and timing",
+      "title_ar": "العمالة والتوقيت",
+      "body_en": "A rotation can fit the water balance and still fail if harvest labour or machinery is unavailable.",
+      "body_ar": "قد تناسب الدورة توازن الماء ومع ذلك تفشل إذا غابت عمالة الحصاد أو الآلات.",
+      "review_action_en": "Check labour, machinery and harvest timing with the farmer.",
+      "review_action_ar": "تحقق من العمالة والآلات وتوقيت الحصاد مع المزارع.",
+      "needs_native_review": true
+    },
+    {
+      "id": "groundwater",
+      "severity": "high",
+      "title_en": "Groundwater at field level",
+      "title_ar": "الماء الجوفي على مستوى الحقل",
+      "body_en": "GRACE-FO can describe a large region; it cannot diagnose one field's aquifer or well.",
+      "body_ar": "يمكن لـ GRACE-FO وصف منطقة واسعة؛ لكنه لا يشخّص خزان ماء أو بئراً في حقل واحد.",
+      "review_action_en": "Ask for local well records and a water-level measurement; do not infer field health from GRACE-FO.",
+      "review_action_ar": "اطلب سجلات البئر المحلية وقياس منسوب الماء؛ لا تستنتج صحة الحقل من GRACE-FO.",
+      "needs_native_review": true
+    }
+  ]
+}

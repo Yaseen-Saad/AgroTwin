@@ -136,3 +136,191 @@ assumptions:
     description: "Use Hargreaves when humidity, wind or solar radiation is missing."
     source: "assumption:hargreaves_fallback"
     editable: true
+
+  # Provisional Egyptian crop economics for B-03. Each row is editable; replace with a dated
+  # farmgate or mill-gate source before Gate 2. Values are per hectare and per tonne as labelled.
+  price_wheat:
+    value: 11000
+    unit: EGP_per_t
+    description: "Provisional Egyptian farmgate wheat price for 2024; replace with a dated source."
+    source: "assumption:price_wheat"
+    editable: true
+    citation_status: "provisional; no verified farmgate source yet"
+  price_maize:
+    value: 9000
+    unit: EGP_per_t
+    description: "Provisional Egyptian farmgate maize price for 2024; replace with a dated source."
+    source: "assumption:price_maize"
+    editable: true
+    citation_status: "provisional; no verified farmgate source yet"
+  price_sorghum:
+    value: 8000
+    unit: EGP_per_t
+    description: "Provisional Egyptian farmgate sorghum price for 2024; replace with a dated source."
+    source: "assumption:price_sorghum"
+    editable: true
+    citation_status: "provisional; no verified farmgate source yet"
+  price_berseem_clover:
+    value: 2000
+    unit: EGP_per_t
+    description: "Provisional green-forage berseem price for 2024; replace with a dated source."
+    source: "assumption:price_berseem_clover"
+    editable: true
+    citation_status: "provisional; no verified forage market source yet"
+  price_faba_bean:
+    value: 18000
+    unit: EGP_per_t
+    description: "Provisional Egyptian farmgate faba bean price for 2024; replace with a dated source."
+    source: "assumption:price_faba_bean"
+    editable: true
+    citation_status: "provisional; no verified farmgate source yet"
+  price_sugar_beet:
+    value: 2500
+    unit: EGP_per_t
+    description: "Provisional Egyptian sugar-beet mill price for 2024; replace with a dated source."
+    source: "assumption:price_sugar_beet"
+    editable: true
+    citation_status: "provisional; no verified mill-gate source yet"
+  price_cotton:
+    value: 30000
+    unit: EGP_per_t
+    description: "Provisional Egyptian seed-cotton price for 2024; replace with a dated source."
+    source: "assumption:price_cotton"
+    editable: true
+    citation_status: "provisional; no verified farmgate source yet"
+  price_fallow:
+    value: 0
+    unit: EGP_per_t
+    description: "Fallow earns no crop revenue."
+    source: "assumption:price_fallow"
+    editable: true
+  yield_max_wheat:
+    value: 6.5
+    unit: t_per_ha
+    description: "Provisional maximum wheat yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_wheat"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_maize:
+    value: 8.0
+    unit: t_per_ha
+    description: "Provisional maximum maize yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_maize"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_sorghum:
+    value: 5.0
+    unit: t_per_ha
+    description: "Provisional maximum sorghum yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_sorghum"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_berseem_clover:
+    value: 30.0
+    unit: t_per_ha
+    description: "Provisional green-forage berseem yield over multiple cuts; agronomist review required."
+    source: "assumption:yield_max_berseem_clover"
+    editable: true
+    citation_status: "provisional; forage cutting trial source not yet attached"
+  yield_max_faba_bean:
+    value: 3.0
+    unit: t_per_ha
+    description: "Provisional maximum faba bean yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_faba_bean"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_sugar_beet:
+    value: 50.0
+    unit: t_per_ha
+    description: "Provisional maximum sugar-beet yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_sugar_beet"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_cotton:
+    value: 2.5
+    unit: t_per_ha
+    description: "Provisional maximum seed-cotton yield under no water stress; agronomist review required."
+    source: "assumption:yield_max_cotton"
+    editable: true
+    citation_status: "provisional; Egyptian yield trial source not yet attached"
+  yield_max_fallow:
+    value: 0
+    unit: t_per_ha
+    description: "Fallow has no harvested yield."
+    source: "assumption:yield_max_fallow"
+    editable: true
+  cost_wheat:
+    value: 25000
+    unit: EGP_per_ha
+    description: "Provisional wheat seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_wheat"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_maize:
+    value: 30000
+    unit: EGP_per_ha
+    description: "Provisional maize seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_maize"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_sorghum:
+    value: 22000
+    unit: EGP_per_ha
+    description: "Provisional sorghum seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_sorghum"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_berseem_clover:
+    value: 18000
+    unit: EGP_per_ha
+    description: "Provisional berseem seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_berseem_clover"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_faba_bean:
+    value: 20000
+    unit: EGP_per_ha
+    description: "Provisional faba bean seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_faba_bean"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_sugar_beet:
+    value: 45000
+    unit: EGP_per_ha
+    description: "Provisional sugar-beet seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_sugar_beet"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_cotton:
+    value: 40000
+    unit: EGP_per_ha
+    description: "Provisional cotton seed, fertilizer and labour cost per hectare for 2024."
+    source: "assumption:cost_cotton"
+    editable: true
+    citation_status: "provisional; no verified Egyptian cost survey yet"
+  cost_fallow:
+    value: 0
+    unit: EGP_per_ha
+    description: "Fallow carries no seed, fertilizer or labour cost."
+    source: "assumption:cost_fallow"
+    editable: true
+  n_price:
+    value: 25
+    unit: EGP_per_kg_N
+    description: "Provisional nitrogen fertilizer price used to value the legume credit."
+    source: "assumption:n_price"
+    editable: true
+    citation_status: "provisional; replace with a dated Egyptian fertilizer price"
+  water_cost:
+    value: 1.5
+    unit: EGP_per_m3
+    description: "Provisional irrigation water price used in the profit calculation."
+    source: "assumption:water_cost"
+    editable: true
+    citation_status: "provisional; replace with a dated local water tariff"
+  price_band:
+    value: 0.2
+    unit: fraction
+    description: "Low and high price scenarios are the base multiplier plus or minus this band."
+    source: "assumption:price_band"
+    editable: true
